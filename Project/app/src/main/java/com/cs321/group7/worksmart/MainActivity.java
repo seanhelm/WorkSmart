@@ -77,32 +77,33 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent intent;
 
-        if (id == R.id.nav_second) {
-            Intent intent = new Intent(this, SecondActivity.class);
-            startActivity(intent);
+        switch(id)
+        {
+            case R.id.nav_homepage:
+                intent = new Intent(this, MainActivity.class);
+                break;
+            case R.id.nav_classlist:
+                intent = new Intent(this, ClassListActivity.class);
+                break;
+            default:
+                intent = new Intent(this, MainActivity.class); // Fallback
         }
-// else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+
+        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
+
+/*
+To Remember For Data Sync:
+https://developers.google.com/drive/android/appfolder
+*/
