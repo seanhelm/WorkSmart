@@ -14,6 +14,20 @@
         </menu>
     </item>
 
+    <item android:title="Debug Functions">
+        <menu>
+            <item android:id="@+id/debug_add_semester"
+            android:title="Add Semester"
+            />
+            <item android:id="@+id/debug_add_class"
+                android:title="Add Class"
+                />
+            <item android:id="@+id/debug_add_assignment"
+                android:title="Add Assignment"
+                />
+        </menu>
+    </item>
+
     <item android:title="Settings">
         <menu>
             <item

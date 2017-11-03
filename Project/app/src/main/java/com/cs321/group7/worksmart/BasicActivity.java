@@ -70,6 +70,18 @@ public class BasicActivity extends AppCompatActivity
             case R.id.nav_classlist:
                 intent = new Intent(this, ClassListActivity.class);
                 break;
+            case R.id.debug_add_semester:
+                // CODE TO ADD A SEMESTER
+                intent = new Intent(this, MainActivity.class);
+                break;
+            case R.id.debug_add_class:
+                // CODE TO ADD A CLASS
+                intent = new Intent(this, MainActivity.class);
+                break;
+            case R.id.debug_add_assignment:
+                // CODE TO ADD AN ASSIGNMENT
+                intent = new Intent(this, MainActivity.class);
+                break;
             default:
                 intent = new Intent(this, ClassListActivity.class); // Fallback
         }
