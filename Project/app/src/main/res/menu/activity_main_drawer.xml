@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Schedule">
+    */
+    <item android:title="Quick Access">
         <menu>
             <item
                 android:id="@+id/nav_homepage"
@@ -13,22 +15,23 @@
                 android:title="Class List" />
         </menu>
     </item>
+    /*
 
-    <item android:title="Debug Functions">
+    <item android:title="Manage Classes">
         <menu>
-            <item android:id="@+id/debug_add_semester"
-            android:title="Add Semester"
-            />
-            <item android:id="@+id/debug_add_class"
-                android:title="Add Class"
-                />
-            <item android:id="@+id/debug_add_assignment"
-                android:title="Add Assignment"
-                />
+            <item
+                android:id="@+id/debug_add_semester"
+                android:title="Add Semester" />
+            <item
+                android:id="@+id/debug_add_class"
+                android:title="Add Class" />
+            <item
+                android:id="@+id/debug_add_assignment"
+                android:title="Add Assignment" />
         </menu>
     </item>
 
-    <item android:title="Settings">
+    <item android:title="Options">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -40,5 +43,6 @@
                 android:title="Time/Date" />
         </menu>
     </item>
+    <item android:title="Exit" />
 
 </menu>
