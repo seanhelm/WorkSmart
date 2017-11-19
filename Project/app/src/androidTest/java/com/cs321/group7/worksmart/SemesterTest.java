@@ -4,6 +4,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import com.cs321.group7.worksmart.Entities.Semester;
 
@@ -39,6 +40,21 @@ public class SemesterTest {
         long id = appDB.semesterDao().insert(semester);
 
         Semester retrieved = appDB.semesterDao().get(id);
-        assertEquals(retrieved.getName(), "Fall 2016");
+        assertEquals("Fall 2016", retrieved.getName());
+    }
+
+    @Test
+    public void updateAndVerifySemester()
+    {
+        Semester semester = new Semester("Fall 2016");
+        long id = appDB.semesterDao().insert(semester);
+
+        semester = appDB.semesterDao().get(id);
+        assertEquals("Fall 2016", semester.getName());
+        semester.setName("Spring 2017");
+        appDB.semesterDao().update(semester);
+
+        semester = appDB.semesterDao().get(id);
+        assertEquals("Spring 2017", semester.getName());
     }
 }
