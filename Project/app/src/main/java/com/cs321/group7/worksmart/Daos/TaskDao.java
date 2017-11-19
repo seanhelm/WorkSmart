@@ -16,13 +16,13 @@ import java.util.List;
 @Dao
 public interface TaskDao {
     @Query("SELECT * FROM task WHERE class_id = :class_id")
-    public List<Task> getAll(int class_id);
+    public List<Task> getAll(long class_id);
 
     @Query("SELECT * FROM task WHERE id = :id")
-    public Task get(int id);
+    public Task get(long id);
 
     @Insert
-    public void add(Task semester);
+    public long insert(Task semester);
 
     @Update
     public void update(Task semester);

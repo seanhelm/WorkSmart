@@ -18,13 +18,84 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
         onDelete = CASCADE))
 public class Task {
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    private long id;
 
-    public String name;
-    public int date;
-    public int time;
-    public int priority;
+    private String name;
+    private int date;
+    private int time;
+    private int priority;
 
     @ColumnInfo(name = "class_id")
-    public int classId;
+    private long classId;
+
+    public Task(String name, int date, int time, int priority, long classId)
+    {
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.priority = priority;
+        this.classId = classId;
+    }
+
+    // Getters and Setters
+
+    public long getId()
+    {
+        return this.id;
+    }
+
+    public void setId(long id)
+    {
+        this.id = id;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public int getDate()
+    {
+        return this.date;
+    }
+
+    public void setDate(int date)
+    {
+        this.date = date;
+    }
+
+    public int getTime()
+    {
+        return this.time;
+    }
+
+    public void setTime(int time)
+    {
+        this.time = time;
+    }
+
+    public int getPriority()
+    {
+        return this.priority;
+    }
+
+    public void setPriority(int priority)
+    {
+        this.priority = priority;
+    }
+
+    public long getClassId()
+    {
+        return this.classId;
+    }
+
+    public void setClassId(long classId)
+    {
+        this.classId = classId;
+    }
 }

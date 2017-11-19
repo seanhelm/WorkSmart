@@ -16,13 +16,13 @@ import java.util.List;
 @Dao
 public interface ClassDao {
     @Query("SELECT * FROM class WHERE semester_id = :semester_id")
-    public List<Class> getAll(int semester_id);
+    public List<Class> getAll(long semester_id);
 
     @Query("SELECT * FROM class WHERE id = :id")
-    public Class get(int id);
+    public Class get(long id);
 
     @Insert
-    public void add(Class c);
+    public long insert(Class c);
 
     @Update
     public void update(Class c);

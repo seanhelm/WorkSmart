@@ -16,13 +16,13 @@ import java.util.List;
 @Dao
 public interface GradeDao {
     @Query("SELECT * FROM grade WHERE class_id = :class_id")
-    public List<Grade> getAll(int class_id);
+    public List<Grade> getAll(long class_id);
 
     @Query("SELECT * FROM grade WHERE id = :id")
-    public Grade get(int id);
+    public Grade get(long id);
 
     @Insert
-    public void add(Grade semester);
+    public long insert(Grade semester);
 
     @Update
     public void update(Grade semester);

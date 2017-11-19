@@ -19,10 +19,10 @@ public interface SemesterDao {
     public List<Semester> getAll();
 
     @Query("SELECT * FROM semester WHERE id = :id")
-    public Semester get(int id);
+    public Semester get(long id);
 
     @Insert
-    public void add(Semester semester);
+    public long insert(Semester semester);
 
     @Update
     public void update(Semester semester);
