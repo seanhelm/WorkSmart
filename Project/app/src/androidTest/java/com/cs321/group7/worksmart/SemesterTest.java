@@ -1,8 +1,12 @@
 package com.cs321.group7.worksmart;
 
 import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
+
+import com.cs321.group7.worksmart.Entities.Semester;
 
 import org.junit.After;
 import org.junit.Before;

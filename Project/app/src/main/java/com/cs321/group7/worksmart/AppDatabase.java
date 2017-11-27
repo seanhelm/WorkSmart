@@ -5,6 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.cs321.group7.worksmart.Daos.*;
+import com.cs321.group7.worksmart.Entities.*;
 import com.cs321.group7.worksmart.Entities.Class;
 
 /**

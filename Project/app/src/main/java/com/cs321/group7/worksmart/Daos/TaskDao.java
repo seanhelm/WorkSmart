@@ -1,11 +1,11 @@
-package com.cs321.group7.worksmart;
+package com.cs321.group7.worksmart.Daos;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.cs321.group7.worksmart.Task;
+import com.cs321.group7.worksmart.Entities.Task;
 
 import java.util.List;
 

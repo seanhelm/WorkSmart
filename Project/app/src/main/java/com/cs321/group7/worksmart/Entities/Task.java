@@ -1,11 +1,9 @@
-package com.cs321.group7.worksmart;
+package com.cs321.group7.worksmart.Entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
-
-import java.lang.*;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
@@ -14,26 +12,28 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
  */
 
 @Entity(foreignKeys = @ForeignKey(
-        entity = java.lang.Class.class,
+        entity = Class.class,
         parentColumns = "id",
         childColumns = "class_id",
         onDelete = CASCADE))
-public class Grade {
+public class Task {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
     private String name;
-    private float value;
-    private float weight;
+    private String date;
+    private String time;
+    private int priority;
 
     @ColumnInfo(name = "class_id")
     private long classId;
 
-    public Grade(String name, float value, float weight, long classId)
+    public Task(String name, String date, String time, int priority, long classId)
     {
         this.name = name;
-        this.value = value;
-        this.weight = weight;
+        this.date = date;
+        this.time = time;
+        this.priority = priority;
         this.classId = classId;
     }
 
@@ -59,24 +59,34 @@ public class Grade {
         this.name = name;
     }
 
-    public float getValue()
+    public String getDate()
     {
-        return this.value;
+        return this.date;
     }
 
-    public void setValue(float value)
+    public void setDate(String date)
     {
-        this.value = value;
+        this.date = date;
     }
 
-    public float getWeight()
+    public String getTime()
     {
-        return this.weight;
+        return this.time;
     }
 
-    public void setWeight(float weight)
+    public void setTime(String time)
     {
-        this.weight = weight;
+        this.time = time;
+    }
+
+    public int getPriority()
+    {
+        return this.priority;
+    }
+
+    public void setPriority(int priority)
+    {
+        this.priority = priority;
     }
 
     public long getClassId()
