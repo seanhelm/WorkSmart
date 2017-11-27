@@ -72,41 +72,14 @@ public class BasicActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        switch (id) {
-            case R.id.action_main:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-
-            case R.id.action_classlist:
-                startActivity(new Intent(this, ClassListActivity.class));
-                break;
-
-            case R.id.debug_make_me_disappear:
-                Log.d("Heads up!", "You clicked the disappearing one.");
-                invalidateOptionsMenu();
-                item.setVisible(false);
-                break;
-
-            case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
-
-            case R.id.action_exit:
-                Log.d("Heads up!", "You clicked exit!");
-                break;
-
-            default:
-                startActivity(new Intent(this, MainActivity.class));
-                Log.d("Heads up!", "Add this activity to the switch statement");
-                break;
-        }
+        goToActivity(id);
 
         return super.onOptionsItemSelected(item);
     }
 
     public void goToActivity(int id)
     {
+
         switch (id) {
             case R.id.action_main:
                 startActivity(new Intent(this, MainActivity.class));
@@ -135,7 +108,5 @@ public class BasicActivity extends AppCompatActivity
                 Log.d("Heads up!", "Add this activity to the switch statement");
                 break;
         }
-
-
     }
 }
