@@ -29,13 +29,13 @@ public class Class {
     private String professor;
     private String email;
     private String location;
-    private int time;
+    private String time;
 
     @ColumnInfo(name = "semester_id")
     private long semesterId;
 
     public Class(String name, String professor, String email,
-                 String location, int time, long semesterId)
+                 String location, String time, long semesterId)
     {
         this.name = name;
         this.professor = professor;
@@ -97,12 +97,12 @@ public class Class {
         this.location = location;
     }
 
-    public int getTime()
+    public String getTime()
     {
         return this.time;
     }
 
-    public void setTime(int time)
+    public void setTime(String time)
     {
         this.time = time;
     }

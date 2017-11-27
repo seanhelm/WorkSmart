@@ -21,14 +21,14 @@ public class Task {
     private long id;
 
     private String name;
-    private int date;
-    private int time;
+    private String date;
+    private String time;
     private int priority;
 
     @ColumnInfo(name = "class_id")
     private long classId;
 
-    public Task(String name, int date, int time, int priority, long classId)
+    public Task(String name, String date, String time, int priority, long classId)
     {
         this.name = name;
         this.date = date;
@@ -59,22 +59,22 @@ public class Task {
         this.name = name;
     }
 
-    public int getDate()
+    public String getDate()
     {
         return this.date;
     }
 
-    public void setDate(int date)
+    public void setDate(String date)
     {
         this.date = date;
     }
 
-    public int getTime()
+    public String getTime()
     {
         return this.time;
     }
 
-    public void setTime(int time)
+    public void setTime(String time)
     {
         this.time = time;
     }
