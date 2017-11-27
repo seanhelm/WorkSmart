@@ -17,6 +17,10 @@
     <item android:title="Debug Functions">
         <menu>
             <item
+                android:id="@+id/debug_make_me_disappear"
+                android:icon="@android:drawable/ic_dialog_alert"
+                android:title="Make Me Disappear" />
+            <item
                 android:id="@+id/debug_add_semester"
                 android:icon="@android:drawable/ic_dialog_alert"
                 android:title="Add Semester" />
@@ -35,5 +39,10 @@
         android:id="@+id/action_settings"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="Settings Activity" />
+
+    <item
+        android:id="@+id/action_exit"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="Exit" />
 
 </menu>
