@@ -4,7 +4,7 @@
         <menu>
             <item
                 android:id="@+id/action_main"
-                android:icon="@android:drawable/ic_menu_info_details"
+                android:icon="@android:drawable/ic_menu_compass"
                 android:title="Main Activity" />
 
             <item
