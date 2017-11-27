@@ -7,13 +7,23 @@ package com.cs321.group7.worksmart;
 public class systemUtilities
 {
         //------------------------------------------------------------------------------------------
+        //---------------------------Semester  Related----------------------------------------------
+        //------------------------------------------------------------------------------------------
+        public void addSemester(String semesterName)
+        {
+            Semester newSemester = new Semester(semesterName);
+
+
+        }
+
+        //------------------------------------------------------------------------------------------
         //---------------------------Grade Related--------------------------------------------------
         //------------------------------------------------------------------------------------------
 
         //Retrieves class from database using className, and returns the current grade
         public double getCurrentGrade(String className)
         {
-            
+
         }
 
         //Updates the currentGrade variable of specified class

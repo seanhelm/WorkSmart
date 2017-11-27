@@ -1,4 +1,4 @@
-package com.cs321.group7.worksmart.Entities;
+package com.cs321.group7.worksmart;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
