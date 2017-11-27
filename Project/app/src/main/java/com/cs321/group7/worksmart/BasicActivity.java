@@ -1,95 +1,97 @@
 package com.cs321.group7.worksmart;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.support.annotation.LayoutRes;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 
 public class BasicActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-    // Activity code here
+    private NavigationView navigationView;
+    private DrawerLayout fullLayout;
+    private Toolbar toolbar;
+    private ActionBarDrawerToggle drawerToggle;
+    private int selectedNavItemId;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void setContentView(@LayoutRes int layoutResID) {
+        fullLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_basic, null);
+        FrameLayout activityContainer = (FrameLayout) fullLayout.findViewById(R.id.activity_content);
+        getLayoutInflater().inflate(layoutResID, activityContainer, true);
+        super.setContentView(fullLayout);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        navigationView = (NavigationView) findViewById(R.id.navigationView);
+
+        if (useToolbar()) {
+            setSupportActionBar(toolbar);
+        } else {
+            toolbar.setVisibility(View.GONE);
+        }
+
+        setUpNavView();
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+    protected boolean useToolbar() {
+        return true;
+    }
+
+    protected boolean useHamburger() {
+        return true;
+    }
+
+    protected void setUpNavView() {
+        navigationView.setNavigationItemSelectedListener(this);
+
+        if (useHamburger()) {
+            drawerToggle = new ActionBarDrawerToggle(this, fullLayout, toolbar, R.string.nav_drawer_opened, R.string.nav_drawer_closed);
+            drawerToggle.syncState();
+        } else if (useToolbar() && getSupportActionBar() != null) {
+            // Use home/back button instead
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        fullLayout.closeDrawer(GravityCompat.START);
+        selectedNavItemId = menuItem.getItemId();
+
+        return onOptionsItemSelected(menuItem);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_main:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
+
+            case R.id.action_classlist:
+                startActivity(new Intent(this, ClassListActivity.class));
+                break;
+
+            case R.id.action_settings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+
+            default:
+                startActivity(new Intent(this, MainActivity.class));
+                Log.d("Heads up!", "Add this activity to the switch statement");
+                break;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        Intent intent;
-
-        switch(id)
-        {
-            case R.id.nav_homepage:
-                intent = new Intent(this, MainActivity.class);
-                break;
-            case R.id.nav_classlist:
-                intent = new Intent(this, ClassListActivity.class);
-                break;
-            case R.id.debug_add_semester:
-                // CODE TO ADD A SEMESTER
-                intent = new Intent(this, MainActivity.class);
-                break;
-            case R.id.debug_add_class:
-                // CODE TO ADD A CLASS
-                intent = new Intent(this, MainActivity.class);
-                break;
-            case R.id.debug_add_assignment:
-                // CODE TO ADD AN ASSIGNMENT
-                intent = new Intent(this, MainActivity.class);
-                break;
-            default:
-                intent = new Intent(this, ClassListActivity.class); // Fallback
-        }
-
-        startActivity(intent);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }
