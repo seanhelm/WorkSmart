@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorAccent"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:paddingLeft="20dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="20dp"
     android:text="Header"
-    android:textColor="@android:color/white" />
+    android:textColor="@android:color/white">
+
+    <TextView
+        android:id="@+id/welcome_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/paddingTop"
+        android:text="Welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user_name_default"
+        android:textSize="18sp" />
+    </LinearLayout>
 
