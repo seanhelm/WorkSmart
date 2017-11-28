@@ -1,5 +1,7 @@
 package com.cs321.group7.worksmart;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +21,6 @@ public class EditClassActivity extends BasicActivity {
         setContentView(R.layout.activity_editclass);
 
         EditText editClass = (EditText) findViewById(R.id.editclassname);
-        Button contactProf = (Button) findViewById(R.id.contactprofessor);
-        Button contactTA = (Button) findViewById(R.id.contactta);
 
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +28,6 @@ public class EditClassActivity extends BasicActivity {
                 EditClassActivity.super.goToActivity(R.id.action_editclass);
             }
         });
-
 
     }
 

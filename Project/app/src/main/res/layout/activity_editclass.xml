@@ -14,12 +14,12 @@
         android:id="@+id/classname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="30dp"
         android:text="Class Name: "
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editclassname"
@@ -41,6 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Professor: "
         android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/editclassname"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -49,33 +50,34 @@
         android:id="@+id/editprofessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="edit professor's name"
-        android:inputType="textPersonName"
         android:layout_alignBaseline="@+id/classprofessor"
         android:layout_alignBottom="@+id/classprofessor"
+        android:layout_toEndOf="@+id/classname"
         android:layout_toRightOf="@+id/classname"
-        android:layout_toEndOf="@+id/classname" />
+        android:ems="10"
+        android:hint="edit professor's email"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/classta"
+        android:id="@+id/classuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TA: "
+        android:text="UTA:"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_below="@+id/editprofessor"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp" />
 
     <EditText
-        android:id="@+id/editta"
+        android:id="@+id/edituta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/classta"
-        android:layout_alignBottom="@+id/classta"
+        android:layout_alignBaseline="@+id/classuta"
+        android:layout_alignBottom="@+id/classuta"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:hint="edit TA's name"
+        android:hint="edit UTA's email "
         android:inputType="textPersonName" />
 
     <TextView
@@ -84,8 +86,8 @@
         android:layout_height="wrap_content"
         android:text="Location: "
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/editta"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/classgta"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -105,7 +107,7 @@
         android:id="@+id/classstart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="30dp"
         android:text="Class Start Time"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_below="@+id/editlocation"
@@ -116,12 +118,12 @@
         android:id="@+id/classend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/classstart"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="17dp"
         android:text="Class End Time: "
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/classstart"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/editstartime"
@@ -153,12 +155,11 @@
         android:id="@+id/classdays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editendtime"
-        android:layout_marginTop="13dp"
         android:text="Days:"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/editendtime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:id="@+id/monday"
@@ -225,4 +226,26 @@
         android:layout_alignBottom="@+id/friday"
         android:layout_toRightOf="@+id/friday"
         android:layout_toEndOf="@+id/friday" />
+
+    <TextView
+        android:id="@+id/classgta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GTA:"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/editgta"
+        android:layout_alignBottom="@+id/editgta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editgta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edituta"
+        android:layout_alignStart="@+id/edituta"
+        android:layout_below="@+id/edituta"
+        android:ems="10"
+        android:hint="edit GTA's email"
+        android:inputType="textPersonName" />
 </RelativeLayout>

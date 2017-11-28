@@ -1,5 +1,7 @@
 package com.cs321.group7.worksmart;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,17 +20,41 @@ public class ClassInfoActivity extends BasicActivity {
         setContentView(R.layout.activity_classinfo);
 
         Button editClass = (Button) findViewById(R.id.editclass);
+        Button removeClass = (Button) findViewById(R.id.removeclass);
         Button contactProf = (Button) findViewById(R.id.contactprofessor);
-        Button contactTA = (Button) findViewById(R.id.contactta);
+        Button contactUta = (Button) findViewById(R.id.contatctuta);
+        Button contactGta = (Button) findViewById(R.id.contactgta);
 
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ClassInfoActivity.super.goToActivity(R.id.action_editclass);
-
             }
         });
-
+        contactProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://mailto:fakeEmail@gmu.edu");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        contactUta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://mailto:fakeEmail@gmu.edu");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+        contactGta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("http://mailto:fakeEmail@gmu.edu");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
 
     }
 
