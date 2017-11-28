@@ -27,29 +27,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="edit class"
-        android:layout_above="@+id/insertlocation"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/insertlocation"
-        android:layout_toEndOf="@+id/insertlocation" />
+        android:layout_below="@+id/removeclass"
+        android:layout_alignRight="@+id/lettergrade"
+        android:layout_alignEnd="@+id/lettergrade"
+        android:layout_alignLeft="@+id/contactprofessor"
+        android:layout_alignStart="@+id/contactprofessor" />
 
     <Button
         android:id="@+id/contactprofessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/contatctuta"
-        android:layout_alignStart="@+id/contatctuta"
-        android:layout_below="@+id/editclass"
-        android:text="contact professor" />
+        android:text="contact professor"
+        android:layout_below="@+id/classname"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/editlocation"
+        android:layout_toEndOf="@+id/editlocation" />
 
     <Button
         android:id="@+id/contatctuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:text="contact uta"
+        android:layout_above="@+id/grade"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/contactprofessor"
-        android:text="contact uta" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/location"
@@ -61,29 +63,6 @@
         android:layout_below="@+id/classname"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/grade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Grade:"
-        android:textAppearance="@android:style/TextAppearance.Large"
-        android:textStyle="bold"
-        android:layout_alignBottom="@+id/lettergrade"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/insertlocation"
-        android:layout_width="wrap_content"
-        android:layout_height="150px"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/location"
-        android:layout_toLeftOf="@+id/contactprofessor"
-        android:layout_toStartOf="@+id/contactprofessor"
-        android:text="insert location"
-        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/lettergrade"
@@ -108,28 +87,18 @@
     <ScrollView
         android:id="@+id/classtasks"
         android:layout_width="700px"
-        android:layout_height="300px"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_height="600px"
         android:layout_alignParentBottom="true"
-        android:layout_below="@+id/contactgta">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/contactgta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/contatctuta"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/contatctuta"
-        android:layout_below="@+id/contatctuta"
-        android:text="contact gta" />
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/removeclass"
@@ -141,6 +110,30 @@
         android:layout_toEndOf="@+id/classname"
         android:text="delete class"
         android:textColor="@android:color/holo_red_dark" />
+
+    <EditText
+        android:id="@+id/editlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/location"
+        android:layout_toLeftOf="@+id/contatctuta"
+        android:layout_toStartOf="@+id/contatctuta"
+        android:ems="10"
+        android:hint="edit location"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Grade:"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold"
+        android:layout_below="@+id/editlocation" />
 
 
 </RelativeLayout>
