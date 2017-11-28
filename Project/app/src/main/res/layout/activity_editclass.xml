@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/paddingBottom"
+    android:paddingLeft="@dimen/paddingLeft"
+    android:paddingRight="@dimen/paddingRight"
+    android:paddingTop="@dimen/paddingTop"
+    tools:context="com.cs321.group7.worksmart.EditClassActivity">
+
+
+    <TextView
+        android:id="@+id/classname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp"
+        android:text="Class Name: "
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <EditText
+        android:id="@+id/editclassname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="edit class name "
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/classname"
+        android:layout_alignBottom="@+id/classname"
+        android:layout_toRightOf="@+id/classname"
+        android:layout_toEndOf="@+id/classname"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:id="@+id/classprofessor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professor: "
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/editclassname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editprofessor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="edit professor's name"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/classprofessor"
+        android:layout_alignBottom="@+id/classprofessor"
+        android:layout_toRightOf="@+id/classname"
+        android:layout_toEndOf="@+id/classname" />
+
+    <TextView
+        android:id="@+id/classta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TA: "
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/editprofessor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/classta"
+        android:layout_alignBottom="@+id/classta"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="edit TA's name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/classlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location: "
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/editta"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="edit class location"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/classlocation"
+        android:layout_alignBottom="@+id/classlocation"
+        android:layout_toRightOf="@+id/classprofessor"
+        android:layout_toEndOf="@+id/classprofessor" />
+
+    <TextView
+        android:id="@+id/classstart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="Class Start Time"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/editlocation"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/classend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/classstart"
+        android:layout_marginTop="29dp"
+        android:text="Class End Time: "
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <EditText
+        android:id="@+id/editstartime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/classstart"
+        android:layout_alignBottom="@+id/classstart"
+        android:layout_toEndOf="@+id/classend"
+        android:layout_toRightOf="@+id/classend"
+        android:ems="10"
+        android:hint="edit start time"
+        android:inputType="time"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/editendtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/classend"
+        android:layout_alignBottom="@+id/classend"
+        android:layout_toEndOf="@+id/classstart"
+        android:layout_toRightOf="@+id/classstart"
+        android:ems="10"
+        android:hint="edit end time"
+        android:inputType="time"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/classdays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editendtime"
+        android:layout_marginTop="13dp"
+        android:text="Days:"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <CheckBox
+        android:id="@+id/monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="M"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_below="@+id/classdays"
+        android:layout_toLeftOf="@+id/tuesday"
+        android:layout_toStartOf="@+id/tuesday" />
+
+    <CheckBox
+        android:id="@+id/tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="T"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/monday"
+        android:layout_alignBottom="@+id/monday"
+        android:layout_toLeftOf="@+id/editlocation"
+        android:layout_toStartOf="@+id/editlocation" />
+
+    <CheckBox
+        android:id="@+id/wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="W"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/tuesday"
+        android:layout_alignBottom="@+id/tuesday"
+        android:layout_toLeftOf="@+id/editendtime"
+        android:layout_toStartOf="@+id/editendtime" />
+
+    <CheckBox
+        android:id="@+id/thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Th"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/wednesday"
+        android:layout_alignBottom="@+id/wednesday"
+        android:layout_toRightOf="@+id/wednesday"
+        android:layout_toEndOf="@+id/wednesday" />
+
+    <CheckBox
+        android:id="@+id/friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/thursday"
+        android:layout_alignBottom="@+id/thursday"
+        android:layout_toRightOf="@+id/thursday"
+        android:layout_toEndOf="@+id/thursday" />
+
+    <CheckBox
+        android:id="@+id/saturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sat"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_alignBaseline="@+id/friday"
+        android:layout_alignBottom="@+id/friday"
+        android:layout_toRightOf="@+id/friday"
+        android:layout_toEndOf="@+id/friday" />
+</RelativeLayout>

@@ -89,6 +89,10 @@ public class BasicActivity extends AppCompatActivity
                 startActivity(new Intent(this, ClassListActivity.class));
                 break;
 
+            case R.id.action_editclass:
+                startActivity(new Intent(this, EditClassActivity.class));
+                break;
+
             case R.id.debug_make_me_disappear:
                 Log.d("Heads up!", "You clicked the disappearing one.");
                 invalidateOptionsMenu();

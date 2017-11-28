@@ -10,16 +10,19 @@
             <item
                 android:id="@+id/action_classlist"
                 android:icon="@android:drawable/ic_menu_agenda"
-                android:title="ClassList Activity" />
+                android:title="Classes" />
         </menu>
     </item>
 
-    <item android:title="Debug Functions">
+    <item
+        android:title="Debug Functions"
+        android:visible="false">
         <menu>
-            <item
+            /*<item
                 android:id="@+id/debug_make_me_disappear"
                 android:icon="@android:drawable/ic_dialog_alert"
                 android:title="Make Me Disappear" />
+            */
             <item
                 android:id="@+id/debug_add_semester"
                 android:icon="@android:drawable/ic_dialog_alert"
@@ -32,11 +35,14 @@
                 android:id="@+id/debug_add_assignment"
                 android:icon="@android:drawable/ic_dialog_alert"
                 android:title="Add Assignment" />
-
             <item
                 android:id="@+id/action_classinfo"
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Class Info" />
+            <item
+                android:id="@+id/action_editclass"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Edit Class" />
         </menu>
     </item>
 

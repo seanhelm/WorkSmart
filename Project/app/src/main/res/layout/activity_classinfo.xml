@@ -37,13 +37,13 @@
         android:id="@+id/contactprofessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/contactTA"
-        android:layout_alignStart="@+id/contactTA"
+        android:layout_alignLeft="@+id/contactta"
+        android:layout_alignStart="@+id/contactta"
         android:layout_below="@+id/editclass"
         android:text="contact professor" />
 
     <Button
-        android:id="@+id/contactTA"
+        android:id="@+id/contactta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -80,7 +80,7 @@
         android:id="@+id/insertlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/contactTA"
+        android:layout_above="@+id/contactta"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/location"
@@ -93,7 +93,7 @@
         android:id="@+id/lettergrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/contactTA"
+        android:layout_alignBottom="@+id/contactta"
         android:layout_below="@+id/insertlocation"
         android:layout_toEndOf="@+id/grade"
         android:layout_toLeftOf="@+id/contactprofessor"
@@ -105,8 +105,8 @@
         android:layout_height="wrap_content"
         android:text="88"
         android:textSize="30sp"
-        android:layout_alignBaseline="@+id/contactTA"
-        android:layout_alignBottom="@+id/contactTA"
+        android:layout_alignBaseline="@+id/contactta"
+        android:layout_alignBottom="@+id/contactta"
         android:layout_centerHorizontal="true" />
 
     <ScrollView
@@ -115,7 +115,7 @@
         android:layout_height="300px"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/contactTA"
+        android:layout_below="@+id/contactta"
         android:layout_alignParentBottom="true">
 
         <LinearLayout

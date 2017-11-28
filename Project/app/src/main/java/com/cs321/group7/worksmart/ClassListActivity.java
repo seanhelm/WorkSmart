@@ -19,12 +19,61 @@ public class ClassListActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classlist);
 
-        Button button = (Button) findViewById(R.id.button2);
+        Button Class1 = (Button) findViewById(R.id.class1);
+        Button Class2 = (Button) findViewById(R.id.class2);
+        Button Class3 = (Button) findViewById(R.id.class3);
+        Button Class4 = (Button) findViewById(R.id.class4);
+        Button Class5 = (Button) findViewById(R.id.class5);
+        Button Class6 = (Button) findViewById(R.id.class6);
+        Button Class7 = (Button) findViewById(R.id.class7);
+        Button Class8 = (Button) findViewById(R.id.class8);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        Class1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
+            }
+        });
+        Class8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassListActivity.super.goToActivity(R.id.action_classinfo);
             }
         });
     }

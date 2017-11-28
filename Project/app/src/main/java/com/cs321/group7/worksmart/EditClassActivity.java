@@ -4,28 +4,28 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
- * Created by veeda on 11/27/2017.
+ * Created by veeda on 11/28/2017.
  */
 
-public class ClassInfoActivity extends BasicActivity {
+public class EditClassActivity extends BasicActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classinfo);
+        setContentView(R.layout.activity_editclass);
 
-        Button editClass = (Button) findViewById(R.id.editclass);
+        EditText editClass = (EditText) findViewById(R.id.editclassname);
         Button contactProf = (Button) findViewById(R.id.contactprofessor);
         Button contactTA = (Button) findViewById(R.id.contactta);
 
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ClassInfoActivity.super.goToActivity(R.id.action_editclass);
-
+                EditClassActivity.super.goToActivity(R.id.action_editclass);
             }
         });
 

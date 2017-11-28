@@ -10,14 +10,14 @@
     tools:context="com.cs321.group7.worksmart.ClassListActivity">
 
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="68dp"
-            android:text="Class 1" />
+    <Button
+        android:id="@+id/class1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class 1"
+        android:layout_below="@+id/currentclasses"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/currentclasses"
@@ -32,6 +32,70 @@
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/class2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class1"
+        android:layout_alignStart="@+id/class1"
+        android:layout_below="@+id/class1"
+        android:text="Class 2" />
+
+    <Button
+        android:id="@+id/class3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class2"
+        android:layout_alignStart="@+id/class2"
+        android:layout_below="@+id/class2"
+        android:text="Class 3" />
+
+    <Button
+        android:id="@+id/class4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class3"
+        android:layout_alignStart="@+id/class3"
+        android:layout_below="@+id/class3"
+        android:text="CLass 4" />
+
+    <Button
+        android:id="@+id/class5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class4"
+        android:layout_alignStart="@+id/class4"
+        android:layout_below="@+id/class4"
+        android:text="class 5" />
+
+    <Button
+        android:id="@+id/class6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class5"
+        android:layout_alignStart="@+id/class5"
+        android:layout_below="@+id/class5"
+        android:text="class 6" />
+
+    <Button
+        android:id="@+id/class7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/class6"
+        android:layout_alignStart="@+id/class6"
+        android:layout_below="@+id/class6"
+        android:text="class 7" />
+
+    <Button
+        android:id="@+id/class8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/class7"
+        android:layout_alignRight="@+id/class7"
+        android:layout_below="@+id/class7"
+        android:text="class 8" />
+
 
 
 </RelativeLayout>
