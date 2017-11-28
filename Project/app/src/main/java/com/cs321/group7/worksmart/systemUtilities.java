@@ -3,6 +3,8 @@ package com.cs321.group7.worksmart;
 import com.cs321.group7.worksmart.Daos.*;
 import com.cs321.group7.worksmart.Entities.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Lord Mendoza on 11/15/2017.
@@ -10,13 +12,29 @@ import com.cs321.group7.worksmart.Entities.*;
 
 public class SystemUtilities
 {
+        private String profileName;
+        public long[] classID;
+        public long[] gradeID;
+        public long[] taskID;
+
+        public void addClassID(String className)
+        {
+
+        }
+
+        public long getClassID(String className)
+        {
+            return 0;
+        }
+
+
         //------------------------------------------------------------------------------------------
         //---------------------------Semester  Related----------------------------------------------
         //------------------------------------------------------------------------------------------
         public void addSemester(String semesterName)
         {
                 Semester newSemester = new Semester(semesterName);
-                
+                AppDatabase.getDB().semesterDao().insert(newSemester);
         }
 
         //------------------------------------------------------------------------------------------
@@ -60,6 +78,47 @@ public class SystemUtilities
         //------------------------------------------------------------------------------------------
         //---------------------------Task Related---------------------------------------------------
         //------------------------------------------------------------------------------------------
+        public List<Task> getTaskList(String className)
+        {
+            List<Task> taskList = new ArrayList<Task>();
+            //Import the list of tasks to the taskList variable from database
+            return null;
+        }
 
+        public void addTask(String className, String taskName, String dueDate, String dueTime,
+                            int priorityLevel, String notes)
+        {
 
+        }
+
+        //------------------------------------------------------------------------------------------
+        //---------------------------Access Related-------------------------------------------------
+        //------------------------------------------------------------------------------------------
+        public String getEmailInfo(String className, int facultyIndex)
+        {
+
+        }
+
+        public void toggleHighContrast()
+        {
+
+        }
+
+        public void toggleTextSize()
+        {
+
+        }
+
+        public void closeApplication()
+        {
+            System.exit(1);
+        }
+
+        //------------------------------------------------------------------------------------------
+        //---------------------------Options Related------------------------------------------------
+        //------------------------------------------------------------------------------------------
+        public void addProfileName(String userName)
+        {
+            this.profileName = userName;
+        }
 }
