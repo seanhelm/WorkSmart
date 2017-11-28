@@ -34,7 +34,7 @@ public class SystemUtilities
         public void addSemester(String semesterName)
         {
                 Semester newSemester = new Semester(semesterName);
-                AppDatabase.getDB().semesterDao().insert(newSemester);
+                //AppDatabase.getDB().semesterDao().insert(newSemester);
         }
 
         //------------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ public class SystemUtilities
         //------------------------------------------------------------------------------------------
         public String getEmailInfo(String className, int facultyIndex)
         {
-
+return "";
         }
 
         public void toggleHighContrast()
