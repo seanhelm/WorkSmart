@@ -5,7 +5,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.ScrollView;
 
 /**
  * Created by veeda on 11/27/2017.
@@ -19,11 +22,10 @@ public class ClassInfoActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classinfo);
 
+
         Button editClass = (Button) findViewById(R.id.editclass);
-        Button removeClass = (Button) findViewById(R.id.removeclass);
         Button contactProf = (Button) findViewById(R.id.contactprofessor);
         Button contactUta = (Button) findViewById(R.id.contatctuta);
-        Button contactGta = (Button) findViewById(R.id.contactgta);
 
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,14 +42,6 @@ public class ClassInfoActivity extends BasicActivity {
             }
         });
         contactUta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("http://mailto:fakeEmail@gmu.edu");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        });
-        contactGta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uri = Uri.parse("http://mailto:fakeEmail@gmu.edu");

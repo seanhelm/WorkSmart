@@ -96,8 +96,9 @@ public class SystemUtilities
         //------------------------------------------------------------------------------------------
         public String getEmailInfo(String className, int facultyIndex)
         {
-return "";
+        return "";
         }
+
 
         public void toggleHighContrast()
         {
