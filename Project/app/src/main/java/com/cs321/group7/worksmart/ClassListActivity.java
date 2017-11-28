@@ -1,7 +1,11 @@
 package com.cs321.group7.worksmart;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 /**
  * Created by Chris on 11/26/2017.
@@ -9,10 +13,20 @@ import android.view.MenuItem;
 
 public class ClassListActivity extends BasicActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classlist);
+
+        Button button = (Button) findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               ClassListActivity.super.goToActivity(R.id.action_main);
+            }
+        });
     }
 
     @Override
@@ -24,4 +38,5 @@ public class ClassListActivity extends BasicActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

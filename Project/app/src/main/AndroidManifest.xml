@@ -18,15 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".BasicActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ClassListActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="Your Classes"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="Settings"
+            android:theme="@style/AppTheme.NoActionBar" />
 
     </application>
 
