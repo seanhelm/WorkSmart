@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/paddingTop"
     tools:context="com.cs321.group7.worksmart.ClassListActivity">
 
-
     <TextView
         android:id="@+id/classname"
         android:layout_width="300px"
@@ -28,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="edit class"
+
         android:layout_above="@+id/contactprofessor"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -38,6 +38,7 @@
         android:id="@+id/contactprofessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="contact professor"
         android:layout_above="@+id/contatctuta"
         android:layout_alignParentRight="true"

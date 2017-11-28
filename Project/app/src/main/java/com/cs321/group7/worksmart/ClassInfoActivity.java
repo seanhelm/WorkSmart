@@ -27,7 +27,6 @@ public class ClassInfoActivity extends BasicActivity {
         Button contactProf = (Button) findViewById(R.id.contactprofessor);
         Button contactUta = (Button) findViewById(R.id.contatctuta);
 
-
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

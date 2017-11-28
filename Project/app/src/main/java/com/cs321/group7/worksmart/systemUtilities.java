@@ -94,11 +94,11 @@ public class SystemUtilities
         //------------------------------------------------------------------------------------------
         //---------------------------Access Related-------------------------------------------------
         //------------------------------------------------------------------------------------------
+        public String getEmailInfo(String className, int facultyIndex)
+        {
+        return "";
+        }
 
-        //public String getEmailInfo(String className, int facultyIndex)
-       // {
-
-       // }
 
         public void toggleHighContrast()
         {
