@@ -103,6 +103,11 @@ public class BasicActivity extends AppCompatActivity
                 Log.d("Heads up!", "You clicked exit!");
                 break;
 
+            case R.id.action_classinfo:
+                startActivity(new Intent(this, ClassInfoActivity.class));
+                break;
+
+
             default:
                 startActivity(new Intent(this, MainActivity.class));
                 Log.d("Heads up!", "Add this activity to the switch statement");

@@ -32,6 +32,11 @@
                 android:id="@+id/debug_add_assignment"
                 android:icon="@android:drawable/ic_dialog_alert"
                 android:title="Add Assignment" />
+
+            <item
+                android:id="@+id/action_classinfo"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Class Info" />
         </menu>
     </item>
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/paddingBottom"
+    android:paddingLeft="@dimen/paddingLeft"
+    android:paddingRight="@dimen/paddingRight"
+    android:paddingTop="@dimen/paddingTop"
+    tools:context="com.cs321.group7.worksmart.ClassListActivity">
+
+    <TextView
+        android:id="@+id/classname"
+        android:layout_width="300px"
+        android:layout_height="200px"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Class Name"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/editclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/contactprofessor"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/contactprofessor"
+        android:layout_below="@+id/classname"
+        android:text="edit class" />
+
+    <Button
+        android:id="@+id/contactprofessor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/contactTA"
+        android:layout_alignStart="@+id/contactTA"
+        android:layout_below="@+id/editclass"
+        android:text="contact professor" />
+
+    <Button
+        android:id="@+id/contactTA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/contactprofessor"
+        android:text="contact TA " />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/classname"
+        android:layout_toLeftOf="@+id/editclass"
+        android:layout_toStartOf="@+id/editclass"
+        android:text="Location: "
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/insertgrade"
+        android:layout_alignBottom="@+id/insertgrade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Current Grade:"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/insertlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/contactTA"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/location"
+        android:layout_toLeftOf="@+id/editclass"
+        android:layout_toStartOf="@+id/editclass"
+        android:text="insert location"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lettergrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/contactTA"
+        android:layout_below="@+id/insertlocation"
+        android:layout_toEndOf="@+id/grade"
+        android:layout_toLeftOf="@+id/contactprofessor"
+        android:layout_toRightOf="@+id/grade" />
+
+    <TextView
+        android:id="@+id/insertgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="88"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/contactTA"
+        android:layout_alignBottom="@+id/contactTA"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:id="@+id/classtasks"
+        android:layout_width="700px"
+        android:layout_height="300px"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/contactTA"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
+</RelativeLayout>
