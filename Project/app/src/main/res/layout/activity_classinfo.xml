@@ -9,6 +9,7 @@
     android:paddingTop="@dimen/paddingTop"
     tools:context="com.cs321.group7.worksmart.ClassListActivity">
 
+
     <TextView
         android:id="@+id/classname"
         android:layout_width="300px"
@@ -27,9 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="edit class"
-        android:layout_below="@+id/removeclass"
-        android:layout_alignRight="@+id/lettergrade"
-        android:layout_alignEnd="@+id/lettergrade"
+        android:layout_above="@+id/contactprofessor"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/contactprofessor"
         android:layout_alignStart="@+id/contactprofessor" />
 
@@ -38,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="contact professor"
-        android:layout_below="@+id/classname"
+        android:layout_above="@+id/contatctuta"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/editlocation"
@@ -49,7 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="contact uta"
-        android:layout_above="@+id/grade"
+        android:layout_alignBaseline="@+id/editlocation"
+        android:layout_alignBottom="@+id/editlocation"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -84,33 +86,6 @@
         android:layout_alignBottom="@+id/grade"
         android:layout_centerHorizontal="true" />
 
-    <ScrollView
-        android:id="@+id/classtasks"
-        android:layout_width="700px"
-        android:layout_height="600px"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
-    </ScrollView>
-
-    <Button
-        android:id="@+id/removeclass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/classname"
-        android:text="delete class"
-        android:textColor="@android:color/holo_red_dark" />
-
     <EditText
         android:id="@+id/editlocation"
         android:layout_width="wrap_content"
@@ -134,6 +109,15 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textStyle="bold"
         android:layout_below="@+id/editlocation" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/grade"
+        android:scrollbars="horizontal|vertical" />
 
 
 </RelativeLayout>

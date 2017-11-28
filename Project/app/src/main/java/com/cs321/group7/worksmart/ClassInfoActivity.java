@@ -5,7 +5,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.ScrollView;
 
 /**
@@ -20,11 +22,11 @@ public class ClassInfoActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classinfo);
 
+
         Button editClass = (Button) findViewById(R.id.editclass);
-        Button removeClass = (Button) findViewById(R.id.removeclass);
         Button contactProf = (Button) findViewById(R.id.contactprofessor);
         Button contactUta = (Button) findViewById(R.id.contatctuta);
-        ScrollView classTasks = (ScrollView) findViewById(R.id.classtasks);
+
 
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
