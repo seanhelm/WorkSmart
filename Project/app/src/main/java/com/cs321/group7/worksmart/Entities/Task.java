@@ -12,7 +12,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
  */
 
 @Entity(foreignKeys = @ForeignKey(
-        entity = Class.class,
+        entity = Course.course,
         parentColumns = "id",
         childColumns = "class_id",
         onDelete = CASCADE))
@@ -25,16 +25,16 @@ public class Task {
     private String time;
     private int priority;
 
-    @ColumnInfo(name = "class_id")
-    private long classId;
+    @ColumnInfo(name = "course_id")
+    private long courseId;
 
-    public Task(String name, String date, String time, int priority, long classId)
+    public Task(String name, String date, String time, int priority, long courseId)
     {
         this.name = name;
         this.date = date;
         this.time = time;
         this.priority = priority;
-        this.classId = classId;
+        this.courseId = courseId;
     }
 
     // Getters and Setters
@@ -89,13 +89,13 @@ public class Task {
         this.priority = priority;
     }
 
-    public long getClassId()
+    public long getCourseId()
     {
-        return this.classId;
+        return this.courseId;
     }
 
-    public void setClassId(long classId)
+    public void setCourseId(long courseId)
     {
-        this.classId = classId;
+        this.couseId = courseId;
     }
 }
