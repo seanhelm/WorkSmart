@@ -1,9 +1,6 @@
 package com.cs321.group7.worksmart.Daos;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
+import android.arch.persistence.room.*;
 
 import com.cs321.group7.worksmart.Entities.Grade;
 
@@ -22,8 +19,11 @@ public interface GradeDao {
     public Grade get(long id);
 
     @Insert
-    public long insert(Grade semester);
+    public long insert(Grade grade);
 
     @Update
-    public void update(Grade semester);
+    public void update(Grade grade);
+
+    @Delete
+    public void delete(Grade grade);
 }

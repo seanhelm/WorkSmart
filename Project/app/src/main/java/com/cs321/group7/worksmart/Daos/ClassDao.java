@@ -1,9 +1,6 @@
 package com.cs321.group7.worksmart.Daos;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
+import android.arch.persistence.room.*;
 
 import com.cs321.group7.worksmart.Entities.Class;
 
@@ -26,4 +23,7 @@ public interface ClassDao {
 
     @Update
     public void update(Class c);
+
+    @Delete
+    public void delete(Class c);
 }
