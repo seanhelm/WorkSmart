@@ -31,10 +31,6 @@ public class Class {
     @ColumnInfo(name = "semester_id")
     private long semesterId;
 
-    public Class(String name, long semesterId) {
-        this(name, "", "", "", "", semesterId);
-    }
-
     public Class(String name, String professor, String email,
                  String location, String time, long semesterId) {
         this.name = name;

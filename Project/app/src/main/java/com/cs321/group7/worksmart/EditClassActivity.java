@@ -16,6 +16,16 @@ public class EditClassActivity extends BasicActivity {
 
     SystemUtilities util;
 
+    public void setTextOfBox(int textbox_id, String text) {
+        final EditText textbox = (EditText) findViewById(textbox_id);
+        textbox.setText(text);
+    }
+
+    public String getTextOfBox(int textbox_id) {
+        final EditText textbox = (EditText) findViewById(textbox_id);
+        return textbox.getText().toString();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,26 +48,22 @@ public class EditClassActivity extends BasicActivity {
         Long class_id = Long.parseLong(message);
         final Class current_class = util.getClassById(class_id);
 
-        final EditText editClass = (EditText) findViewById(R.id.label_editclassname);
-        editClass.setText(current_class.getName());
-        final EditText editProfessor = (EditText) findViewById(R.id.label_editprofessor);
-        editProfessor.setText(current_class.getProfessor());
-        final EditText editUTA= (EditText) findViewById(R.id.label_edituta);
-        editUTA.setText(current_class.getUta());
-        final EditText editGTA= (EditText) findViewById(R.id.label_editgta);
-        editGTA.setText(current_class.getGta());
-
-
-//        EditText editClass = (EditText) findViewById(R.id.label_editclassname);
+        setTextOfBox(R.id.label_editclassname, current_class.getName());
+        setTextOfBox(R.id.label_editprofessor, current_class.getProfessor());
+        setTextOfBox(R.id.label_edituta, current_class.getUta());
+        setTextOfBox(R.id.label_editgta, current_class.getGta());
+        setTextOfBox(R.id.label_editlocation, current_class.getLocation());
 
         Button save_butt = (Button) findViewById(R.id.button_save);
-
         save_butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                current_class.setName(editClass.getText().toString());
-                current_class.setProfessor(editProfessor.getText().toString());
+                current_class.setName(getTextOfBox(R.id.label_editclassname));
+                current_class.setProfessor(getTextOfBox(R.id.label_editprofessor));
+                current_class.setUta(getTextOfBox(R.id.label_edituta));
+                current_class.setGta(getTextOfBox(R.id.label_editgta));
+                current_class.setLocation(getTextOfBox(R.id.label_editlocation));
                 util.updateClass(current_class);
 
                 EditClassActivity.super.goToActivity(R.id.action_classinfo, message);

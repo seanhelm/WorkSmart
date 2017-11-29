@@ -86,12 +86,11 @@
         android:layout_alignBottom="@+id/grade"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:id="@+id/label_editlocation"
         android:layout_width="wrap_content"
         android:layout_height="150px"
         android:ems="10"
-        android:hint="edit location"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:textSize="14sp"
