@@ -47,7 +47,7 @@ public class ClassListActivity extends BasicActivity {
             message = (String) savedInstanceState.getSerializable("MESSAGE");
         }
 
-        Long sem_id = Long.parseLong((message));
+        Long sem_id = Long.parseLong(message);
 
         Semester semester = util.getSemesterById(sem_id);
 
@@ -79,7 +79,7 @@ public class ClassListActivity extends BasicActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ClassListActivity.super.goToActivity(R.id.action_classlist, "" + classes.get(position).getId());
+                ClassListActivity.super.goToActivity(R.id.action_classinfo, "" + classes.get(position).getId());
             }
         });
     }
