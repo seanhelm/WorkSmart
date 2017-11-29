@@ -32,7 +32,7 @@ import com.cs321.group7.worksmart.Entities.Class;
  *      List<Task> = appDB.TaskDao.getAll(class_id)
  */
 
-@Database(entities = {Semester.class, Class.class, Grade.class, Task.class}, version = 1)
+@Database(entities = {Semester.class, Class.class, Grade.class, Task.class}, version = 4)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
 
