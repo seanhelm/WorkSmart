@@ -1,12 +1,12 @@
 package com.cs321.group7.worksmart;
 
-import com.cs321.group7.worksmart.Daos.*;
-import com.cs321.group7.worksmart.Entities.*;
-import com.cs321.group7.worksmart.Entities.Class;
-
 import android.content.Context;
 
-import java.util.ArrayList;
+import com.cs321.group7.worksmart.Entities.Class;
+import com.cs321.group7.worksmart.Entities.Grade;
+import com.cs321.group7.worksmart.Entities.Semester;
+import com.cs321.group7.worksmart.Entities.Task;
+
 import java.util.List;
 
 /**
@@ -132,25 +132,25 @@ public class SystemUtilities {
     //---------------------------Task Related---------------------------------------------------
     //------------------------------------------------------------------------------------------
     public Task getTaskById(long taskId) {
-        return appDB.taskDao().get(taskId);
+        return appDB.TaskDao().get(taskId);
     }
 
     public List<Task> getTasksForClass(Class c) {
-        return appDB.taskDao().getAll(c.getId());
+        return appDB.TaskDao().getAll(c.getId());
     }
 
     public void addTask(Class c, String taskName, String dueDate, String dueTime,
                         int priorityLevel, String notes) {
         Task task = new Task(taskName, dueDate, dueTime, priorityLevel, c.getId());
-        appDB.taskDao().insert(task);
+        appDB.TaskDao().insert(task);
     }
 
     public void removeTask(Task task) {
-        appDB.taskDao().delete(task);
+        appDB.TaskDao().delete(task);
     }
 
     public void updateTask(Task task) {
-        appDB.taskDao().update(task);
+        appDB.TaskDao().update(task);
     }
 
     //------------------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ public class SystemUtilities {
     //---------------------------Utilities Related----------------------------------------------
     //------------------------------------------------------------------------------------------
     public Semester getCurrentSemester() {
-        if(this.currentSemesterId >= 0) {
+        if (this.currentSemesterId >= 0) {
             return appDB.semesterDao().get(this.currentSemesterId);
         } else {
             return null;
@@ -195,7 +195,7 @@ public class SystemUtilities {
     }
 
     public Class getCurrentClass() {
-        if(this.currentClassId >= 0) {
+        if (this.currentClassId >= 0) {
             return appDB.classDao().get(this.currentClassId);
         } else {
             return null;
