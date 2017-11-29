@@ -27,14 +27,12 @@ public class EditClassActivity extends BasicActivity {
         return textbox.getText().toString();
     }
 
-    public void setCheckbox(int textbox_id, boolean checked)
-    {
+    public void setCheckbox(int textbox_id, boolean checked) {
         final CheckBox checkbox = (CheckBox) findViewById(textbox_id);
         checkbox.setChecked(checked);
     }
 
-    public boolean getCheckbox(int textbox_id)
-    {
+    public boolean getCheckbox(int textbox_id) {
         final CheckBox checkbox = (CheckBox) findViewById(textbox_id);
         return checkbox.isChecked();
     }
@@ -74,6 +72,9 @@ public class EditClassActivity extends BasicActivity {
         setCheckbox(R.id.check_friday, current_class.getDay(4));
         setCheckbox(R.id.check_saturday, current_class.getDay(5));
 
+        setTextOfBox(R.id.editstartime, current_class.getClass_start_time());
+        setTextOfBox(R.id.editendtime, current_class.getClass_end_time());
+
         Button save_butt = (Button) findViewById(R.id.button_save);
         save_butt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +93,8 @@ public class EditClassActivity extends BasicActivity {
                 current_class.setDay(4, getCheckbox(R.id.check_friday));
                 current_class.setDay(5, getCheckbox(R.id.check_saturday));
 
-
+                current_class.setClass_start_time(getTextOfBox(R.id.editstartime));
+                current_class.setClass_end_time(getTextOfBox(R.id.editendtime));
 
                 util.updateClass(current_class);
 

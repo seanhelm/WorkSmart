@@ -28,6 +28,8 @@ public class Class {
     private String location;
     private String time;
     private String days;
+    private String class_start_time;
+    private String class_end_time;
 
     @ColumnInfo(name = "semester_id")
     private long semesterId;
@@ -131,6 +133,22 @@ public class Class {
 
     public void setDays(String days) {
         this.days = days;
+    }
+
+    public String getClass_start_time() {
+        return class_start_time;
+    }
+
+    public void setClass_start_time(String class_start_time) {
+        this.class_start_time = class_start_time;
+    }
+
+    public String getClass_end_time() {
+        return class_end_time;
+    }
+
+    public void setClass_end_time(String class_end_time) {
+        this.class_end_time = class_end_time;
     }
 }
 
