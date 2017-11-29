@@ -3,6 +3,7 @@ package com.cs321.group7.worksmart;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.cs321.group7.worksmart.Entities.Class;
@@ -35,22 +36,30 @@ public class EditClassActivity extends BasicActivity {
         }
 
         Long class_id = Long.parseLong(message);
-        Class current_class = util.getClassById(class_id);
+        final Class current_class = util.getClassById(class_id);
 
-        EditText editClass = (EditText) findViewById(R.id.label_editclassname);
+        final EditText editClass = (EditText) findViewById(R.id.label_editclassname);
         editClass.setText(current_class.getName());
-
+        final EditText editProfessor = (EditText) findViewById(R.id.label_editprofessor);
+        editProfessor.setText(current_class.getProfessor());
 
 
 
 //        EditText editClass = (EditText) findViewById(R.id.label_editclassname);
-//
-//        editClass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                EditClassActivity.super.goToActivity(R.id.action_editclass);
-//            }
-//        });
+
+        Button save_butt = (Button) findViewById(R.id.button_save);
+
+        save_butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                current_class.setName(editClass.getText().toString());
+                current_class.setProfessor(editProfessor.getText().toString());
+                util.updateClass(current_class);
+
+                EditClassActivity.super.goToActivity(R.id.action_classinfo, message);
+            }
+        });
 
     }
 
