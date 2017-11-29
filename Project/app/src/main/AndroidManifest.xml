@@ -42,6 +42,14 @@
             android:name=".AddClassActivity"
             android:label="Add Class"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SemesterListActivity"
+            android:label="Semester List"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddSemesterActivity"
+            android:label="Add Semester"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

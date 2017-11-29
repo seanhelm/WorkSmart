@@ -8,7 +8,7 @@
                 android:title="Main Activity" />
 
             <item
-                android:id="@+id/action_classlist"
+                android:id="@+id/action_semesterlist"
                 android:icon="@android:drawable/ic_menu_agenda"
                 android:title="Classes" />
         </menu>
@@ -16,7 +16,7 @@
 
     <item
         android:title="Debug Functions"
-        android:visible="true">
+        android:visible="false">
         <menu>
             <item
                 android:id="@+id/debug_make_me_disappear"
@@ -47,6 +47,14 @@
                 android:id="@+id/action_addclass"
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Add Class" />
+            <item
+                android:id="@+id/action_addsemester"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Add Semester" />
+
+          <item  android:id="@+id/action_classlist"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Classes" />
         </menu>
     </item>
 

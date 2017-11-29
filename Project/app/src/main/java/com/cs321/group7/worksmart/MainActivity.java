@@ -48,17 +48,6 @@ public class MainActivity extends BasicActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-
-
-
-        //Use for performing commands that are stored in the System Utilities layer
-//        SystemUtilities util = new SystemUtilities(getApplicationContext());
-//
-//        util.addSemester("Default");
-//
-//        List<Semester> sems = util.getAllSemesters();
-//        Log.d("yo", "List: "+sems.size());
-
     }
 
     @Override

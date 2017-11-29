@@ -115,6 +115,14 @@ public class BasicActivity extends AppCompatActivity
                 startActivity(new Intent(this, AddClassActivity.class));
                 break;
 
+            case R.id.action_addsemester:
+                startActivity(new Intent(this, AddSemesterActivity.class));
+                break;
+
+            case R.id.action_semesterlist:
+                startActivity(new Intent(this, SemesterListActivity.class));
+                break;
+
             default:
                 startActivity(new Intent(this, MainActivity.class));
                 Log.d("Heads up!", "Add this activity to the switch statement");
