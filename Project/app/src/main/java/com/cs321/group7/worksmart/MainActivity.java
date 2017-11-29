@@ -3,12 +3,16 @@ package com.cs321.group7.worksmart;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+=======
+import android.content.Context;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Created by Chris on 11/26/2017.
@@ -27,6 +31,7 @@ public class MainActivity extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+<<<<<<< HEAD
         listview = (ListView) findViewById(R.id.my_list);
 
         adapter = new ArrayAdapter<String>(this,
@@ -43,6 +48,10 @@ public class MainActivity extends BasicActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+=======
+        //Use for performing commands that are stored in the System Utilities layer
+        SystemUtilities util = new SystemUtilities(getApplicationContext());
+>>>>>>> refs/remotes/origin/master
     }
 
     @Override
