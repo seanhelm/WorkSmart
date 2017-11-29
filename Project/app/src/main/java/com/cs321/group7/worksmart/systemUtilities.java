@@ -12,6 +12,7 @@ import java.util.List;
 
 public class SystemUtilities
 {
+        private AppDatabase appDB;
         private String profileName;
         public long[] classID;
         public long[] gradeID;
@@ -34,7 +35,7 @@ public class SystemUtilities
         public void addSemester(String semesterName)
         {
                 Semester newSemester = new Semester(semesterName);
-                AppDatabase.getDB().semesterDao().insert(newSemester);
+                appDB.semesterDao().insert(newSemester);
         }
 
         //------------------------------------------------------------------------------------------
