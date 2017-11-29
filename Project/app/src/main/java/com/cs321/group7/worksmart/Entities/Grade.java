@@ -21,13 +21,13 @@ public class Grade {
     private long id;
 
     private String name;
-    private float value;
-    private float weight;
+    private double value;
+    private double weight;
 
     @ColumnInfo(name = "class_id")
     private long classId;
 
-    public Grade(String name, float value, float weight, long classId)
+    public Grade(String name, double value, double weight, long classId)
     {
         this.name = name;
         this.value = value;
@@ -57,22 +57,22 @@ public class Grade {
         this.name = name;
     }
 
-    public float getValue()
+    public double getValue()
     {
         return this.value;
     }
 
-    public void setValue(float value)
+    public void setValue(double value)
     {
         this.value = value;
     }
 
-    public float getWeight()
+    public double getWeight()
     {
         return this.weight;
     }
 
-    public void setWeight(float weight)
+    public void setWeight(double weight)
     {
         this.weight = weight;
     }

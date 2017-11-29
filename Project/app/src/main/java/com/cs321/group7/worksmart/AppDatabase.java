@@ -50,5 +50,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract SemesterDao semesterDao();
     public abstract ClassDao classDao();
     public abstract GradeDao gradeDao();
-    public abstract TaskDao TaskDao();
+    public abstract TaskDao taskDao();
 }

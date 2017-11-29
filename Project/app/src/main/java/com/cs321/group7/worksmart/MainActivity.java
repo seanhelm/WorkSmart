@@ -17,7 +17,7 @@ public class MainActivity extends BasicActivity {
         setContentView(R.layout.activity_main);
 
         //Use for performing commands that are stored in the System Utilities layer
-        SystemUtilities util = new SystemUtilities(this.getApplicationContext());
+        SystemUtilities util = new SystemUtilities(getApplicationContext());
     }
 
     @Override
