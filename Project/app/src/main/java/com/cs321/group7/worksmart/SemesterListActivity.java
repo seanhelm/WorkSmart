@@ -41,6 +41,7 @@ public class SemesterListActivity extends BasicActivity {
 
         for (int i = 0; i < sems.size(); i++) {
             listItems.add(sems.get(i).getName());
+            //util.removeSemester(sems.get(i));
         }
         adapter.notifyDataSetChanged();
 
