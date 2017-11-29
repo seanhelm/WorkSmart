@@ -4,12 +4,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.cs321.group7.worksmart.Entities.Class;
 
 /**
- * Created by veeda on 11/28/2017.
+ * Created by Chris on 11/28/2017.
  */
 
 public class EditClassActivity extends BasicActivity {
@@ -24,6 +25,18 @@ public class EditClassActivity extends BasicActivity {
     public String getTextOfBox(int textbox_id) {
         final EditText textbox = (EditText) findViewById(textbox_id);
         return textbox.getText().toString();
+    }
+
+    public void setCheckbox(int textbox_id, boolean checked)
+    {
+        final CheckBox checkbox = (CheckBox) findViewById(textbox_id);
+        checkbox.setChecked(checked);
+    }
+
+    public boolean getCheckbox(int textbox_id)
+    {
+        final CheckBox checkbox = (CheckBox) findViewById(textbox_id);
+        return checkbox.isChecked();
     }
 
     @Override
@@ -54,6 +67,13 @@ public class EditClassActivity extends BasicActivity {
         setTextOfBox(R.id.label_editgta, current_class.getGta());
         setTextOfBox(R.id.label_editlocation, current_class.getLocation());
 
+        setCheckbox(R.id.check_monday, current_class.getDay(0));
+        setCheckbox(R.id.check_tuesday, current_class.getDay(1));
+        setCheckbox(R.id.check_wednesday, current_class.getDay(2));
+        setCheckbox(R.id.check_thursday, current_class.getDay(3));
+        setCheckbox(R.id.check_friday, current_class.getDay(4));
+        setCheckbox(R.id.check_saturday, current_class.getDay(5));
+
         Button save_butt = (Button) findViewById(R.id.button_save);
         save_butt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +84,16 @@ public class EditClassActivity extends BasicActivity {
                 current_class.setUta(getTextOfBox(R.id.label_edituta));
                 current_class.setGta(getTextOfBox(R.id.label_editgta));
                 current_class.setLocation(getTextOfBox(R.id.label_editlocation));
+
+                current_class.setDay(0, getCheckbox(R.id.check_monday));
+                current_class.setDay(1, getCheckbox(R.id.check_tuesday));
+                current_class.setDay(2, getCheckbox(R.id.check_wednesday));
+                current_class.setDay(3, getCheckbox(R.id.check_thursday));
+                current_class.setDay(4, getCheckbox(R.id.check_friday));
+                current_class.setDay(5, getCheckbox(R.id.check_saturday));
+
+
+
                 util.updateClass(current_class);
 
                 EditClassActivity.super.goToActivity(R.id.action_classinfo, message);

@@ -27,6 +27,7 @@ public class Class {
     private String email;
     private String location;
     private String time;
+    private String days;
 
     @ColumnInfo(name = "semester_id")
     private long semesterId;
@@ -39,6 +40,7 @@ public class Class {
         this.location = location;
         this.time = time;
         this.semesterId = semesterId;
+        this.days = "000000";
     }
 
     // Getters and Setters
@@ -113,6 +115,22 @@ public class Class {
 
     public void setGta(String gta) {
         this.gta = gta;
+    }
+
+    public void setDay(int day, boolean val) {
+        this.days = this.days.substring(0, day) + (val ? "1" : "0") + this.days.substring(day + 1);
+    }
+
+    public boolean getDay(int day) {
+        return (this.days.charAt(day) == '1');
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
     }
 }
 

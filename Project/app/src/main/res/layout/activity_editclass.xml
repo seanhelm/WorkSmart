@@ -173,70 +173,70 @@
         android:layout_alignParentStart="true" />
 
     <CheckBox
-        android:id="@+id/monday"
+        android:id="@+id/check_monday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="M"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_below="@+id/classdays"
-        android:layout_toLeftOf="@+id/tuesday"
-        android:layout_toStartOf="@+id/tuesday" />
+        android:layout_toLeftOf="@+id/check_tuesday"
+        android:layout_toStartOf="@+id/check_tuesday" />
 
     <CheckBox
-        android:id="@+id/tuesday"
+        android:id="@+id/check_tuesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="T"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/monday"
-        android:layout_alignBottom="@+id/monday"
+        android:layout_alignBaseline="@+id/check_monday"
+        android:layout_alignBottom="@+id/check_monday"
         android:layout_toLeftOf="@+id/label_editlocation"
         android:layout_toStartOf="@+id/label_editlocation" />
 
     <CheckBox
-        android:id="@+id/wednesday"
+        android:id="@+id/check_wednesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="W"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/tuesday"
-        android:layout_alignBottom="@+id/tuesday"
+        android:layout_alignBaseline="@+id/check_tuesday"
+        android:layout_alignBottom="@+id/check_tuesday"
         android:layout_toLeftOf="@+id/editendtime"
         android:layout_toStartOf="@+id/editendtime" />
 
     <CheckBox
-        android:id="@+id/thursday"
+        android:id="@+id/check_thursday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Th"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/wednesday"
-        android:layout_alignBottom="@+id/wednesday"
-        android:layout_toRightOf="@+id/wednesday"
-        android:layout_toEndOf="@+id/wednesday" />
+        android:layout_alignBaseline="@+id/check_wednesday"
+        android:layout_alignBottom="@+id/check_wednesday"
+        android:layout_toRightOf="@+id/check_wednesday"
+        android:layout_toEndOf="@+id/check_wednesday" />
 
     <CheckBox
-        android:id="@+id/friday"
+        android:id="@+id/check_friday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="F"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/thursday"
-        android:layout_alignBottom="@+id/thursday"
-        android:layout_toRightOf="@+id/thursday"
-        android:layout_toEndOf="@+id/thursday" />
+        android:layout_alignBaseline="@+id/check_thursday"
+        android:layout_alignBottom="@+id/check_thursday"
+        android:layout_toRightOf="@+id/check_thursday"
+        android:layout_toEndOf="@+id/check_thursday" />
 
     <CheckBox
-        android:id="@+id/saturday"
+        android:id="@+id/check_saturday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sat"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/friday"
-        android:layout_alignBottom="@+id/friday"
-        android:layout_toRightOf="@+id/friday"
-        android:layout_toEndOf="@+id/friday" />
+        android:layout_alignBaseline="@+id/check_friday"
+        android:layout_alignBottom="@+id/check_friday"
+        android:layout_toRightOf="@+id/check_friday"
+        android:layout_toEndOf="@+id/check_friday" />
 
     <TextView
         android:id="@+id/classgta"

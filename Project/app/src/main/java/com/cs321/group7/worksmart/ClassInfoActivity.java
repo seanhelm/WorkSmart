@@ -43,6 +43,8 @@ public class ClassInfoActivity extends BasicActivity {
         TextView sem_name = (TextView) findViewById(R.id.classname);
         sem_name.setText(current_class.getName());
 
+        TextView loc = (TextView) findViewById(R.id.label_editlocation);
+        loc.setText(current_class.getLocation());
 
 
         Button editClass = (Button) findViewById(R.id.editclass);
