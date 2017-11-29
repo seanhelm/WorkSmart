@@ -19,9 +19,10 @@ public class Semester {
 
     private String name;
 
-    public Semester(String name)
+    public Semester(String name, long id)
     {
         this.name = name;
+        this.id = id;
     }
 
     // Getters and Setters

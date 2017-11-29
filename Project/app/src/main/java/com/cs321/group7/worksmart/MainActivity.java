@@ -3,6 +3,7 @@ package com.cs321.group7.worksmart;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Context;
 
 /**
  * Created by Chris on 11/26/2017.
@@ -14,6 +15,9 @@ public class MainActivity extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Use for performing commands that are stored in the System Utilities layer
+        SystemUtilities util = new SystemUtilities(this.getApplicationContext());
     }
 
     @Override
