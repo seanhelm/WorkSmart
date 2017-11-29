@@ -57,8 +57,8 @@ public class SemesterListActivity extends BasicActivity {
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //util.setCurrentSemester(sems.get(position));
                 SemesterListActivity.super.goToActivity(R.id.action_classlist, "" + sems.get(position).getId());
             }
         });
