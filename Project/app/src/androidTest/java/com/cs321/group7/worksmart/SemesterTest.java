@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
 import static junit.framework.Assert.assertEquals;
 
 @RunWith(AndroidJUnit4.class)
-public class SemesterTest {
+public class SemesterTest
+{
     private AppDatabase appDB;
 
     @Before
