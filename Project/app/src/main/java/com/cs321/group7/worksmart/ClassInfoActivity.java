@@ -46,15 +46,15 @@ public class ClassInfoActivity extends BasicActivity {
 
 
         Button editClass = (Button) findViewById(R.id.editclass);
-        Button contactProf = (Button) findViewById(R.id.contactprofessor);
-        Button contactUta = (Button) findViewById(R.id.contatctuta);
+//        Button contactProf = (Button) findViewById(R.id.contactprofessor);
+//        Button contactUta = (Button) findViewById(R.id.contatctuta);
 
-//        editClass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ClassInfoActivity.super.goToActivity(R.id.action_editclass);
-//            }
-//        });
+        editClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassInfoActivity.super.goToActivity(R.id.action_editclass, message);
+            }
+        });
 
 
     }

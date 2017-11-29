@@ -22,7 +22,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editclassname"
+        android:id="@+id/label_editclassname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -42,12 +42,12 @@
         android:text="Professor: "
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/editclassname"
+        android:layout_below="@+id/label_editclassname"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editprofessor"
+        android:id="@+id/label_editprofessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/classprofessor"
@@ -64,13 +64,24 @@
         android:layout_height="wrap_content"
         android:text="UTA:"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_below="@+id/editprofessor"
+        android:layout_below="@+id/label_editprofessor"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="14dp" />
 
     <EditText
-        android:id="@+id/edituta"
+        android:id="@+id/label_editgta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/label_edituta"
+        android:layout_alignStart="@+id/label_edituta"
+        android:layout_below="@+id/label_edituta"
+        android:ems="10"
+        android:hint="edit GTA's email"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/label_edituta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/classuta"
@@ -92,7 +103,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editlocation"
+        android:id="@+id/label_editlocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -110,7 +121,7 @@
         android:layout_marginTop="30dp"
         android:text="Class Start Time"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_below="@+id/editlocation"
+        android:layout_below="@+id/label_editlocation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -180,8 +191,8 @@
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_alignBaseline="@+id/monday"
         android:layout_alignBottom="@+id/monday"
-        android:layout_toLeftOf="@+id/editlocation"
-        android:layout_toStartOf="@+id/editlocation" />
+        android:layout_toLeftOf="@+id/label_editlocation"
+        android:layout_toStartOf="@+id/label_editlocation" />
 
     <CheckBox
         android:id="@+id/wednesday"
@@ -233,19 +244,19 @@
         android:layout_height="wrap_content"
         android:text="GTA:"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:layout_alignBaseline="@+id/editgta"
-        android:layout_alignBottom="@+id/editgta"
+        android:layout_alignBaseline="@+id/label_editgta"
+        android:layout_alignBottom="@+id/label_editgta"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/editgta"
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/edituta"
-        android:layout_alignStart="@+id/edituta"
-        android:layout_below="@+id/edituta"
-        android:ems="10"
-        android:hint="edit GTA's email"
-        android:inputType="textPersonName" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="49dp"
+        android:text="Button" />
+
+
 </RelativeLayout>
