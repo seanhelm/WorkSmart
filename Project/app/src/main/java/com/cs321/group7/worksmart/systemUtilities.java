@@ -13,11 +13,13 @@ import java.util.List;
 public class SystemUtilities
 {
         private String profileName;
-        Course currentClass = new Course("","","","","",0);
+        public long[] classID;
+        public long[] gradeID;
+        public long[] taskID;
 
         public void addClassID(String className)
         {
-                
+
         }
 
         public long getClassID(String className)

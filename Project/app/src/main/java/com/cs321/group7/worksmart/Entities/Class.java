@@ -17,11 +17,11 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
  */
 
 @Entity(foreignKeys = @ForeignKey(
-        entity = Semester.Course,
+        entity = Semester.class,
         parentColumns = "id",
         childColumns = "semester_id",
         onDelete = CASCADE))
-public class Course {
+public class Class {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
@@ -34,7 +34,7 @@ public class Course {
     @ColumnInfo(name = "semester_id")
     private long semesterId;
 
-    public Course(String name, String professor, String email,
+    public Class(String name, String professor, String email,
                  String location, String time, long semesterId)
     {
         this.name = name;
