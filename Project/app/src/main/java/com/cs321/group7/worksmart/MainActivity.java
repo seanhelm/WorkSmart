@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,18 +16,20 @@ import java.util.ArrayList;
 
 public class MainActivity extends BasicActivity {
 
-    ArrayList<String> listItems=new ArrayList<String>();
+    ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-int clickCounter=0;
+    int clickCounter = 0;
 
-    ListView listview = (ListView) findViewById(R.id.my_list);
+    ListView listview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        adapter=new ArrayAdapter<String>(this,
+        listview = (ListView) findViewById(R.id.my_list);
+
+        adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 listItems);
         listview.setAdapter(adapter);
@@ -38,7 +39,7 @@ int clickCounter=0;
         butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listItems.add("Clicked : "+clickCounter++);
+                listItems.add("Clicked : " + clickCounter++);
                 adapter.notifyDataSetChanged();
             }
         });
