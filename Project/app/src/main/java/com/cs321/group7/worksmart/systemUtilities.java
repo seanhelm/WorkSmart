@@ -2,6 +2,8 @@ package com.cs321.group7.worksmart;
 
 import com.cs321.group7.worksmart.Daos.*;
 import com.cs321.group7.worksmart.Entities.*;
+import com.cs321.group7.worksmart.Entities.Class;
+import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,30 +14,50 @@ import java.util.List;
 
 public class SystemUtilities
 {
-        private AppDatabase appDB;
-        private String profileName;
-        public long[] classID;
-        public long[] gradeID;
-        public long[] taskID;
+        //For properly welcoming the user in the navigation menu header
+        private String userName = "";
 
-        public void addClassID(String className)
+        //Initializing variables to be used throughout the program run. currentSemesterID and
+        //currentClassID will be used to reference where the user is currently looking at within the
+        //app, to make sure they access only classes in a specific semester, or grades in a specific
+        //class vs. others, etc.
+        private Context context;
+        private AppDatabase appDB = AppDatabase.getDB(context);
+        private long currentSemesterID = 0;
+        private long currentClassID = 0;
+
+        private Semester currentSemester = appDB.semesterDao().get(currentSemesterID);
+        private Class currentClass = appDB.classDao().get(currentClassID);
+
+        public SystemUtilities(Context context)
         {
-
+                this.context = context;
         }
-
-        public long getClassID(String className)
-        {
-            return 0;
-        }
-
 
         //------------------------------------------------------------------------------------------
         //---------------------------Semester  Related----------------------------------------------
         //------------------------------------------------------------------------------------------
         public void addSemester(String semesterName)
         {
-                Semester newSemester = new Semester(semesterName);
+                Semester newSemester = new Semester(semesterName, currentSemesterID);
                 appDB.semesterDao().insert(newSemester);
+                currentSemesterID++;
+        }
+
+        public void removeSemester(long semesterID)
+        {
+                appDB.semesterDao().delete(appDB.semesterDao().get(semesterID));
+        }
+
+        public List<Semester> getAllSemesters()
+        {
+                return appDB.semesterDao().getAll();
+        }
+
+        public void updateSemesterName(long semesterID, String semesterName)
+        {
+                Semester newSemester = new Semester(semesterName, semesterID);
+                appDB.semesterDao().update(newSemester);
         }
 
         //------------------------------------------------------------------------------------------
