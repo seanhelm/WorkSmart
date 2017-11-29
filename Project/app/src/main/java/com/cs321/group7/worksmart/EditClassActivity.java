@@ -42,7 +42,10 @@ public class EditClassActivity extends BasicActivity {
         editClass.setText(current_class.getName());
         final EditText editProfessor = (EditText) findViewById(R.id.label_editprofessor);
         editProfessor.setText(current_class.getProfessor());
-
+        final EditText editUTA= (EditText) findViewById(R.id.label_edituta);
+        editUTA.setText(current_class.getUta());
+        final EditText editGTA= (EditText) findViewById(R.id.label_editgta);
+        editGTA.setText(current_class.getGta());
 
 
 //        EditText editClass = (EditText) findViewById(R.id.label_editclassname);
