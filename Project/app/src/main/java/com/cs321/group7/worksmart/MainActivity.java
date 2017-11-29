@@ -1,9 +1,19 @@
 package com.cs321.group7.worksmart;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Context;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+
+import com.cs321.group7.worksmart.Entities.Semester;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by Chris on 11/26/2017.
@@ -11,13 +21,33 @@ import android.content.Context;
 
 public class MainActivity extends BasicActivity {
 
+    ArrayList<String> listItems = new ArrayList<String>();
+    ArrayAdapter<String> adapter;
+    int clickCounter = 0;
+
+    ListView listview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Use for performing commands that are stored in the System Utilities layer
-        SystemUtilities util = new SystemUtilities(getApplicationContext());
+        listview = (ListView) findViewById(R.id.my_list);
+
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                listItems);
+        listview.setAdapter(adapter);
+
+        Button butt = (Button) findViewById(R.id.button2);
+
+        butt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItems.add("Clicked : " + clickCounter++);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
     @Override

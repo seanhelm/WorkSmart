@@ -41,7 +41,7 @@ public abstract class AppDatabase extends RoomDatabase {
         if(instance == null)
         {
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, "worksmart_db").build();
+                    AppDatabase.class, "worksmart_db").allowMainThreadQueries().build();
         }
 
         return instance;
@@ -50,5 +50,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract SemesterDao semesterDao();
     public abstract ClassDao classDao();
     public abstract GradeDao gradeDao();
-    public abstract TaskDao taskDao();
+    public abstract TaskDao TaskDao();
 }

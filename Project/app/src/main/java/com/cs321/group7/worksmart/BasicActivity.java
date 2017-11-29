@@ -77,36 +77,67 @@ public class BasicActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToActivity(int id)
-    {
+    public void goToActivity(int id) {
+        goToActivity(id, null);
+    }
+
+    public void goToActivity(int id, String message) {
+
+        Class c = null;
 
         switch (id) {
             case R.id.action_main:
-                startActivity(new Intent(this, MainActivity.class));
+                c = MainActivity.class;
                 break;
 
             case R.id.action_classlist:
-                startActivity(new Intent(this, ClassListActivity.class));
+                c = ClassListActivity.class;
+                break;
+
+            case R.id.action_editclass:
+                c = EditClassActivity.class;
                 break;
 
             case R.id.debug_make_me_disappear:
                 Log.d("Heads up!", "You clicked the disappearing one.");
                 invalidateOptionsMenu();
-
                 break;
 
             case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
+                c = SettingsActivity.class;
                 break;
 
             case R.id.action_exit:
                 Log.d("Heads up!", "You clicked exit!");
                 break;
 
+            case R.id.action_classinfo:
+                c = ClassInfoActivity.class;
+                break;
+
+            case R.id.action_addclass:
+                c = AddClassActivity.class;
+                break;
+
+            case R.id.action_addsemester:
+                c = AddSemesterActivity.class;
+                break;
+
+            case R.id.action_semesterlist:
+                c = SemesterListActivity.class;
+                break;
+
             default:
-                startActivity(new Intent(this, MainActivity.class));
+                c = MainActivity.class;
                 Log.d("Heads up!", "Add this activity to the switch statement");
                 break;
         }
+
+        Intent i = (new Intent(this, c));
+
+        if (message != null)
+            i.putExtra("MESSAGE", message);
+
+        startActivity(i);
     }
 }

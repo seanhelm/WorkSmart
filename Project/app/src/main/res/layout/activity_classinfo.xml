@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/paddingBottom"
+    android:paddingLeft="@dimen/paddingLeft"
+    android:paddingRight="@dimen/paddingRight"
+    android:paddingTop="@dimen/paddingTop"
+    tools:context="com.cs321.group7.worksmart.ClassInfoActivity">
+
+    <TextView
+        android:id="@+id/classname"
+        android:layout_width="300px"
+        android:layout_height="200px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/contactuta"
+        android:text="Class Name"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_toLeftOf="@+id/contactuta" />
+
+    <Button
+        android:id="@+id/editclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edit class"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/classname"
+        android:layout_toEndOf="@+id/classname" />
+
+    <Button
+        android:id="@+id/contactprofessor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="contact professor"
+        android:layout_below="@+id/editclass"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/classname"
+        android:layout_toEndOf="@+id/classname" />
+
+    <Button
+        android:id="@+id/contactuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contact uta"
+        android:layout_below="@+id/contactprofessor"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location: "
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold"
+        android:layout_below="@+id/classname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/lettergrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/contatctuta"
+
+        android:layout_toEndOf="@+id/grade"
+        android:layout_toLeftOf="@+id/contactprofessor"
+        android:layout_toRightOf="@+id/grade" />
+
+    <TextView
+        android:id="@+id/insertgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="88"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/grade"
+        android:layout_alignBottom="@+id/grade"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editlocation"
+        android:layout_width="wrap_content"
+        android:layout_height="150px"
+        android:ems="10"
+        android:hint="edit location"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textSize="14sp"
+        android:layout_below="@+id/location"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Grade:"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textStyle="bold"
+        android:layout_below="@+id/editlocation"
+        android:layout_alignRight="@+id/editlocation"
+        android:layout_alignEnd="@+id/editlocation" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal|vertical"
+        android:layout_below="@+id/grade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
+
+
+</RelativeLayout>

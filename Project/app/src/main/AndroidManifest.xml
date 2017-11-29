@@ -30,7 +30,26 @@
             android:name=".SettingsActivity"
             android:label="Settings"
             android:theme="@style/AppTheme.NoActionBar" />
-
+        <activity
+            android:name=".ClassInfoActivity"
+            android:label="Class Info"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditClassActivity"
+            android:label="Edit Class"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddClassActivity"
+            android:label="Add Class"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SemesterListActivity"
+            android:label="Semester List"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddSemesterActivity"
+            android:label="Add Semester"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
