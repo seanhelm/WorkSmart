@@ -44,7 +44,9 @@ public class SystemUtilities {
     public void addSemester(String semesterName) {
         Semester newSemester = new Semester(semesterName);
         long id = appDB.semesterDao().insert(newSemester);
-        this.currentSemesterId = id;
+
+        // Set new semester to current semester
+        this.setCurrentSemester(this.getSemesterById(id));
     }
 
     public void removeSemester(Semester semester) {
@@ -56,20 +58,47 @@ public class SystemUtilities {
     }
 
     //------------------------------------------------------------------------------------------
+    //---------------------------Class  Related-------------------------------------------------
+    //------------------------------------------------------------------------------------------
+    public Class getClassById(long classId) {
+        return appDB.classDao().get(classId);
+    }
+
+    public List<Class> getClassesForSemester(Semester semester) {
+        return appDB.classDao().getAll(semester.getId());
+    }
+
+    public void addClass(Semester semester, String name, String professor, String email,
+                         String location, String time) {
+        Class c = new Class(name, professor, email, location, time, semester.getId());
+        long id = appDB.classDao().insert(c);
+
+        // Set new class to current class
+        this.setCurrentClass(this.getClassById(id));
+    }
+
+    public void removeClass(Class c) {
+        appDB.classDao().delete(c);
+    }
+
+    public void updateClass(Class c) {
+        appDB.classDao().update(c);
+    }
+
+    //------------------------------------------------------------------------------------------
     //---------------------------Grade Related--------------------------------------------------
     //------------------------------------------------------------------------------------------
-
     public Grade getGradeById(long gradeId) {
         return appDB.gradeDao().get(gradeId);
     }
 
-    public List<Grade> getGradesForClass(long classId) {
-        return appDB.gradeDao().getAll(classId);
+    public List<Grade> getGradesForClass(Class c) {
+        return appDB.gradeDao().getAll(c.getId());
     }
 
     //Retrieves class from database using className, and returns the current grade
-    public double getCurrentGrade(long classId) {
-        List<Grade> grades = appDB.gradeDao().getAll(classId);
+    public double getCurrentGrade(Class c) {
+        List<Grade> grades = appDB.gradeDao().getAll(c.getId());
         double currentGrade = 0.0;
 
         for (Grade grade : grades) {
@@ -80,13 +109,13 @@ public class SystemUtilities {
     }
 
     //Updates the currentGrade variable of specified class
-    public void calculateGrade(String className) {
+    public void calculateGrade(Class c) {
         // I don't know what this does
     }
 
     //Adds grade to the list of grades for a class
-    public void addGrade(long classId, String gradeName, float score, float classification) {
-        Grade grade = new Grade(gradeName, score, classification, classId);
+    public void addGrade(Class c, String gradeName, float score, float classification) {
+        Grade grade = new Grade(gradeName, score, classification, c.getId());
         appDB.gradeDao().insert(grade);
     }
 
@@ -106,13 +135,13 @@ public class SystemUtilities {
         return appDB.taskDao().get(taskId);
     }
 
-    public List<Task> getTasksForClass(long classId) {
-        return appDB.taskDao().getAll(classId);
+    public List<Task> getTasksForClass(Class c) {
+        return appDB.taskDao().getAll(c.getId());
     }
 
-    public void addTask(long classId, String taskName, String dueDate, String dueTime,
+    public void addTask(Class c, String taskName, String dueDate, String dueTime,
                         int priorityLevel, String notes) {
-        Task task = new Task(taskName, dueDate, dueTime, priorityLevel, classId);
+        Task task = new Task(taskName, dueDate, dueTime, priorityLevel, c.getId());
         appDB.taskDao().insert(task);
     }
 
@@ -151,7 +180,7 @@ public class SystemUtilities {
     }
 
     //------------------------------------------------------------------------------------------
-    //---------------------------Utilities Related------------------------------------------------
+    //---------------------------Utilities Related----------------------------------------------
     //------------------------------------------------------------------------------------------
     public Semester getCurrentSemester() {
         if(this.currentSemesterId >= 0) {
@@ -161,11 +190,19 @@ public class SystemUtilities {
         }
     }
 
+    public void setCurrentSemester(Semester s) {
+        this.currentSemesterId = s.getId();
+    }
+
     public Class getCurrentClass() {
         if(this.currentClassId >= 0) {
             return appDB.classDao().get(this.currentClassId);
         } else {
             return null;
         }
+    }
+
+    public void setCurrentClass(Class c) {
+        this.currentClassId = c.getId();
     }
 }
