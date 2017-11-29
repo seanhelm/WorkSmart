@@ -12,18 +12,15 @@
 
 
     <TextView
-        android:id="@+id/currentclasses"
+        android:id="@+id/semester_name_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:text="Current Classes:"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addClassButton"

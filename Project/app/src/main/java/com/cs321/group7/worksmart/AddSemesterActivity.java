@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 /**
  * Created by Chris on 11/26/2017.
@@ -30,12 +31,8 @@ public class AddSemesterActivity extends BasicActivity {
                 AddSemesterActivity.super.goToActivity(R.id.action_semesterlist);
             }
         });
+
     }
-
-//    public void clicked()
-//    {
-
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

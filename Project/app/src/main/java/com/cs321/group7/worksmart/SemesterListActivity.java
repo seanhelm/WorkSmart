@@ -1,14 +1,11 @@
 package com.cs321.group7.worksmart;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.text.Editable;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.cs321.group7.worksmart.Entities.Semester;
@@ -26,6 +23,7 @@ public class SemesterListActivity extends BasicActivity {
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     SystemUtilities util;
+    List<Semester> sems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class SemesterListActivity extends BasicActivity {
         setContentView(R.layout.activity_semesterlist);
 
         util = new SystemUtilities(getApplicationContext());
-        List<Semester> sems = util.getAllSemesters();
+        sems = util.getAllSemesters();
 
         listview = (ListView) findViewById(R.id.semester_list);
         adapter = new ArrayAdapter<String>(this,
@@ -55,6 +53,15 @@ public class SemesterListActivity extends BasicActivity {
                 SemesterListActivity.super.goToActivity(R.id.action_addsemester);
             }
         });
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                SemesterListActivity.super.goToActivity(R.id.action_classlist, "" + sems.get(position).getId());
+            }
+        });
+
     }
 
     @Override

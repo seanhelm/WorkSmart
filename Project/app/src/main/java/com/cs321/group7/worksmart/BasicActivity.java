@@ -77,30 +77,34 @@ public class BasicActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToActivity(int id)
-    {
+    public void goToActivity(int id) {
+        goToActivity(id, null);
+    }
+
+    public void goToActivity(int id, String message) {
+
+        Class c = null;
 
         switch (id) {
             case R.id.action_main:
-                startActivity(new Intent(this, MainActivity.class));
+                c = MainActivity.class;
                 break;
 
             case R.id.action_classlist:
-                startActivity(new Intent(this, ClassListActivity.class));
+                c = ClassListActivity.class;
                 break;
 
             case R.id.action_editclass:
-                startActivity(new Intent(this, EditClassActivity.class));
+                c = EditClassActivity.class;
                 break;
 
             case R.id.debug_make_me_disappear:
                 Log.d("Heads up!", "You clicked the disappearing one.");
                 invalidateOptionsMenu();
-
                 break;
 
             case R.id.action_settings:
-                startActivity(new Intent(this, SettingsActivity.class));
+                c = SettingsActivity.class;
                 break;
 
             case R.id.action_exit:
@@ -108,25 +112,32 @@ public class BasicActivity extends AppCompatActivity
                 break;
 
             case R.id.action_classinfo:
-                startActivity(new Intent(this, ClassInfoActivity.class));
+                c = ClassInfoActivity.class;
                 break;
 
             case R.id.action_addclass:
-                startActivity(new Intent(this, AddClassActivity.class));
+                c = AddClassActivity.class;
                 break;
 
             case R.id.action_addsemester:
-                startActivity(new Intent(this, AddSemesterActivity.class));
+                c = AddSemesterActivity.class;
                 break;
 
             case R.id.action_semesterlist:
-                startActivity(new Intent(this, SemesterListActivity.class));
+                c = SemesterListActivity.class;
                 break;
 
             default:
-                startActivity(new Intent(this, MainActivity.class));
+                c = MainActivity.class;
                 Log.d("Heads up!", "Add this activity to the switch statement");
                 break;
         }
+
+        Intent i = (new Intent(this, c));
+
+        if (message != null)
+            i.putExtra("MESSAGE", message);
+
+        startActivity(i);
     }
 }
