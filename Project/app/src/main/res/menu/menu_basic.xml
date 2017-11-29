@@ -16,13 +16,13 @@
 
     <item
         android:title="Debug Functions"
-        android:visible="false">
+        android:visible="true">
         <menu>
-            /*<item
+            <item
                 android:id="@+id/debug_make_me_disappear"
                 android:icon="@android:drawable/ic_dialog_alert"
                 android:title="Make Me Disappear" />
-            */
+
             <item
                 android:id="@+id/debug_add_semester"
                 android:icon="@android:drawable/ic_dialog_alert"
@@ -43,6 +43,10 @@
                 android:id="@+id/action_editclass"
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Edit Class" />
+            <item
+                android:id="@+id/action_addclass"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Add Class" />
         </menu>
     </item>
 

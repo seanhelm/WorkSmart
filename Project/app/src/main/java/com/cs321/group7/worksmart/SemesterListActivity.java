@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 /**
  * Created by Chris on 11/26/2017.
  */
 
-public class ClassListActivity extends BasicActivity {
+public class SemesterListActivity extends BasicActivity {
 
 
     @Override
@@ -23,7 +22,7 @@ public class ClassListActivity extends BasicActivity {
         addClassButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ClassListActivity.super.goToActivity(R.id.action_addclass);
+                SemesterListActivity.super.goToActivity(R.id.action_addclass);
             }
         });
     }

@@ -20,7 +20,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Current Classes:"
+        android:text="Current Semesters:"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textSize="36sp" />

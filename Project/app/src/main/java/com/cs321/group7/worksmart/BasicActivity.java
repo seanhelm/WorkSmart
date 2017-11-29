@@ -111,6 +111,9 @@ public class BasicActivity extends AppCompatActivity
                 startActivity(new Intent(this, ClassInfoActivity.class));
                 break;
 
+            case R.id.action_addclass:
+                startActivity(new Intent(this, AddClassActivity.class));
+                break;
 
             default:
                 startActivity(new Intent(this, MainActivity.class));
