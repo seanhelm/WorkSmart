@@ -52,9 +52,15 @@
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Add Semester" />
 
-          <item  android:id="@+id/action_classlist"
-            android:icon="@android:drawable/ic_menu_agenda"
-            android:title="Classes" />
+            <item
+                android:id="@+id/action_classlist"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Classes" />
+
+            <item
+                android:id="@+id/action_tasklist"
+                android:icon="@android:drawable/ic_menu_agenda"
+                android:title="Task List" />
         </menu>
     </item>
 

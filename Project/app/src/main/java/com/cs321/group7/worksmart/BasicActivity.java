@@ -127,6 +127,10 @@ public class BasicActivity extends AppCompatActivity
                 c = SemesterListActivity.class;
                 break;
 
+            case R.id.action_tasklist:
+                c = TaskListActivity.class;
+                break;
+
             default:
                 c = MainActivity.class;
                 Log.d("Heads up!", "Add this activity to the switch statement");

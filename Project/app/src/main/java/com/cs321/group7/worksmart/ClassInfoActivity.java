@@ -1,7 +1,5 @@
 package com.cs321.group7.worksmart;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,9 +46,6 @@ public class ClassInfoActivity extends BasicActivity {
 
 
         Button editClass = (Button) findViewById(R.id.editclass);
-//        Button contactProf = (Button) findViewById(R.id.contactprofessor);
-//        Button contactUta = (Button) findViewById(R.id.contatctuta);
-
         editClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +53,13 @@ public class ClassInfoActivity extends BasicActivity {
             }
         });
 
-
+        Button button_grades = (Button) findViewById(R.id.button_see_grades);
+        button_grades.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassInfoActivity.super.goToActivity(R.id.action_tasklist, message);
+            }
+        });
     }
 
     @Override
