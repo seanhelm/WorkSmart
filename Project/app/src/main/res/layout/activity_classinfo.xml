@@ -86,12 +86,11 @@
         android:layout_alignBottom="@+id/grade"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/editlocation"
+    <TextView
+        android:id="@+id/label_editlocation"
         android:layout_width="wrap_content"
         android:layout_height="150px"
         android:ems="10"
-        android:hint="edit location"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:textSize="14sp"
@@ -106,9 +105,9 @@
         android:text="Current Grade:"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textStyle="bold"
-        android:layout_below="@+id/editlocation"
-        android:layout_alignRight="@+id/editlocation"
-        android:layout_alignEnd="@+id/editlocation" />
+        android:layout_below="@+id/label_editlocation"
+        android:layout_alignRight="@+id/label_editlocation"
+        android:layout_alignEnd="@+id/label_editlocation" />
 
     <ListView
         android:id="@+id/listview"

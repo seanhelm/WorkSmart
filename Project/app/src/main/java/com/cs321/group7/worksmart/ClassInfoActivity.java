@@ -43,18 +43,20 @@ public class ClassInfoActivity extends BasicActivity {
         TextView sem_name = (TextView) findViewById(R.id.classname);
         sem_name.setText(current_class.getName());
 
+        TextView loc = (TextView) findViewById(R.id.label_editlocation);
+        loc.setText(current_class.getLocation());
 
 
         Button editClass = (Button) findViewById(R.id.editclass);
-        Button contactProf = (Button) findViewById(R.id.contactprofessor);
-        Button contactUta = (Button) findViewById(R.id.contatctuta);
+//        Button contactProf = (Button) findViewById(R.id.contactprofessor);
+//        Button contactUta = (Button) findViewById(R.id.contatctuta);
 
-//        editClass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ClassInfoActivity.super.goToActivity(R.id.action_editclass);
-//            }
-//        });
+        editClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClassInfoActivity.super.goToActivity(R.id.action_editclass, message);
+            }
+        });
 
 
     }
