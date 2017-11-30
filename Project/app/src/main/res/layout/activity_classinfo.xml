@@ -83,7 +83,7 @@
         android:layout_alignBaseline="@+id/grade"
         android:layout_alignBottom="@+id/grade"
         android:layout_centerHorizontal="true"
-        android:text="100"
+        android:text=" - "
         android:textSize="30sp" />
 
     <TextView

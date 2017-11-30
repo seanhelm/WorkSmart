@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,6 +38,7 @@ public class TaskListActivity extends BasicActivity {
 
         FloatingActionButton addTaskButton = (FloatingActionButton) findViewById(R.id.addTaskButton);
         FloatingActionButton addGradeButton = (FloatingActionButton) findViewById(R.id.addGradeButton);
+        Button button = (Button) findViewById(R.id.gradecalc);
 
         final String message;
         if (savedInstanceState == null) {
@@ -92,6 +94,13 @@ public class TaskListActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 TaskListActivity.super.goToActivity(R.id.action_addgrade, message);
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

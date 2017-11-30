@@ -43,7 +43,7 @@
         android:layout_below="@+id/classname"
         android:layout_toEndOf="@+id/currentgrade"
         android:layout_toRightOf="@+id/currentgrade"
-        android:text="100"
+        android:text=" - "
         android:textSize="24sp" />
 
     <Button
