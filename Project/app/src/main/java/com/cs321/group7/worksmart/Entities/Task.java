@@ -107,7 +107,9 @@ public class Task implements Comparable
         return this.getPriority() - priorityLevel;
     }
 
-    public int compareTo(@NonNull Object o) {
-        return 0;
+    public int compareTo(Object o)
+    {
+        int priorityLevel = ((Task)o).getPriority();
+        return this.getPriority() - priorityLevel;
     }
 }
