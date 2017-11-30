@@ -7,11 +7,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/hi">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/hi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,39 +21,39 @@
 
         <activity
             android:name=".BasicActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".ClassListActivity"
             android:label="Your Classes"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".ClassInfoActivity"
             android:label="Class Info"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".EditClassActivity"
             android:label="Edit Class"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".AddClassActivity"
             android:label="Add Class"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".SemesterListActivity"
             android:label="Semester List"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".AddSemesterActivity"
             android:label="Add Semester"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".AddTaskActivity"
             android:label="Add Task"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".AddGradeActivity"
             android:label="Add Grade"
@@ -61,11 +61,11 @@
         <activity
             android:name=".TaskListActivity"
             android:label="Task List"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
         <activity
             android:name=".About"
             android:label="About"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/hi" />
     </application>
 
 </manifest>
