@@ -1,17 +1,17 @@
 package com.cs321.group7.worksmart;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.cs321.group7.worksmart.Entities.Class;
 import com.cs321.group7.worksmart.Entities.Semester;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -24,7 +24,7 @@ public class MainActivity extends BasicActivity {
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
     int clickCounter = 0;
-
+    SystemUtilities util;
     ListView listview;
 
     @Override
@@ -39,15 +39,68 @@ public class MainActivity extends BasicActivity {
                 listItems);
         listview.setAdapter(adapter);
 
-        Button butt = (Button) findViewById(R.id.button2);
 
-        butt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listItems.add("Clicked : " + clickCounter++);
-                adapter.notifyDataSetChanged();
+        TextView loc = (TextView) findViewById(R.id.textView);
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+
+        switch (day) {
+            case Calendar.SUNDAY:
+                loc.setText("Classes Today!" + " (Sunday)");
+                break;
+
+            case Calendar.MONDAY:
+                loc.setText("Classes Today!" + " (Monday)");
+                break;
+
+            case Calendar.TUESDAY:
+                loc.setText("Classes Today!"+" (Tuesday)");
+                break;
+
+            case Calendar.WEDNESDAY:
+                loc.setText("Classes Today!"+" (Wednesday)");
+                break;
+
+            case Calendar.THURSDAY:
+                loc.setText("Classes Today!"+" (Thursday)");
+                break;
+
+            case Calendar.FRIDAY:
+                loc.setText("Classes Today!"+" (Friday)");
+                break;
+
+            case Calendar.SATURDAY:
+                loc.setText("Classes Today!"+" (Saturday)");
+                break;
+        }
+
+
+        util = new SystemUtilities(getApplicationContext());
+
+        List<Semester> sems = util.getAllSemesters();
+        for (int i = 0; i < sems.size(); i++) {
+            List<Class> classes = util.getClassesForSemester(sems.get(i));
+
+            for (int j = 0; j < classes.size(); j++) {
+                if (classes.get(j).getDay(day-2)) {
+                    listItems.add(classes.get(j).getName() + " at " + classes.get(j).getClass_start_time());
+                }
             }
-        });
+        }
+
+        adapter.notifyDataSetChanged();
+
+
+//        Button butt = (Button) findViewById(R.id.button2);
+//
+//        butt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                listItems.add("Clicked : " + clickCounter++);
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
     }
 
     @Override
