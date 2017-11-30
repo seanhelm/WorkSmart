@@ -1,26 +1,32 @@
 package com.cs321.group7.worksmart;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import com.cs321.group7.worksmart.Entities.Class;
 import com.cs321.group7.worksmart.Entities.Grade;
 import com.cs321.group7.worksmart.Entities.Semester;
 import com.cs321.group7.worksmart.Entities.Task;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Lord Mendoza on 11/15/2017.
+ * Created by Lord Mendoza
  */
 
-public class SystemUtilities {
+public class SystemUtilities
+{
     //For properly welcoming the user in the navigation menu header
     private String userName = "";
 
-    //Initializing variables to be used throughout the program run. currentSemesterID and
-    //currentClassID will be used to reference where the user is currently looking at within the
-    //app, to make sure they access only classes in a specific semester, or grades in a specific
-    //class vs. others, etc.
+    /*
+    Initializing variables to be used throughout the program run. currentSemesterID and
+    currentClassID will be used to reference where the user is currently looking at within the
+    app, to make sure they access only classes in a specific semester, or grades in a specific
+    class vs. others, etc.
+    */
     private AppDatabase appDB;
 
     private long currentSemesterId = -1;
@@ -97,7 +103,7 @@ public class SystemUtilities {
     }
 
     //Retrieves class from database using className, and returns the current grade
-    public double getCurrentGrade(Class c) {
+    public double calculateGrade(Class c) {
         List<Grade> grades = appDB.gradeDao().getAll(c.getId());
         double currentGrade = 0.0;
 
@@ -106,11 +112,6 @@ public class SystemUtilities {
         }
 
         return currentGrade;
-    }
-
-    //Updates the currentGrade variable of specified class
-    public void calculateGrade(Class c) {
-        // I don't know what this does
     }
 
     //Adds grade to the list of grades for a class
@@ -135,12 +136,16 @@ public class SystemUtilities {
         return appDB.TaskDao().get(taskId);
     }
 
-    public List<Task> getTasksForClass(Class c) {
-        return appDB.TaskDao().getAll(c.getId());
+    public List<Task> getTasksForClass(Class c)
+    {
+        List<Task> list = appDB.TaskDao().getAll(c.getId());
+        Collections.sort(list);
+
+        return list;
     }
 
     public void addTask(Class c, String taskName, String dueDate, String dueTime,
-                        int priorityLevel, String notes) {
+                        int priorityLevel) {
         Task task = new Task(taskName, dueDate, dueTime, priorityLevel, c.getId());
         appDB.TaskDao().insert(task);
     }
@@ -154,29 +159,27 @@ public class SystemUtilities {
     }
 
     //------------------------------------------------------------------------------------------
-    //---------------------------Access Related-------------------------------------------------
-    //------------------------------------------------------------------------------------------
-    public String getEmailInfo(String className, int facultyIndex) {
-        return null;
-    }
-
-    public void toggleHighContrast() {
-
-    }
-
-    public void toggleTextSize() {
-
-    }
-
-    public void closeApplication() {
-        System.exit(1);
-    }
-
-    //------------------------------------------------------------------------------------------
     //---------------------------Options Related------------------------------------------------
     //------------------------------------------------------------------------------------------
-    public void addProfileName(String userName) {
-        //this.profileName = userName;
+    public void addProfileName(String userName)
+    {
+        this.userName = userName;
+    }
+
+    public String getProfileName(String userName)
+    {
+        return this.userName;
+    }
+
+    public String getEmailInfo(Class className)
+    {
+        setCurrentClass(className);
+        return appDB.classDao().get(currentClassId).getEmail();
+    }
+
+    public void closeApplication()
+    {
+        System.exit(1);
     }
 
     //------------------------------------------------------------------------------------------
