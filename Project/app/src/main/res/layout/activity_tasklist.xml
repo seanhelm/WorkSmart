@@ -15,86 +15,103 @@
         android:id="@+id/classname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="Class Name"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:textSize="36sp"
+        android:textSize="34sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/currentgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/grade"
+        android:layout_alignBottom="@+id/grade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:text="Current Grade:"
         android:textAppearance="@android:style/TextAppearance.Large"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/classname"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/grade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="88"
-        android:textSize="36sp"
-        android:layout_below="@+id/currentgrade"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/classname"
+        android:layout_toEndOf="@+id/currentgrade"
+        android:layout_toRightOf="@+id/currentgrade"
+        android:text=" - "
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/gradecalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/addTaskButton"
-        android:text="Grade calculator"
+        android:layout_alignBottom="@+id/grade"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Calculate Grade"
+        android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <ListView
         android:id="@+id/task_list"
         android:layout_width="match_parent"
         android:layout_height="400px"
-        android:layout_marginTop="11dp"
         android:scrollbars="horizontal|vertical"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="9dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:clickable="true"
         app:fabSize="mini"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_above="@+id/task_list"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addGradeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_above="@+id/list_2"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Grades?"
+        android:text="Grades"
+        android:textSize="18sp"
         android:layout_below="@+id/task_list"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp" />
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="23dp"
         android:text="Tasks"
+        android:textSize="18sp"
         android:layout_below="@+id/grade"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -103,9 +120,9 @@
         android:id="@+id/list_2"
         android:layout_width="match_parent"
         android:layout_height="400px"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="14dp" />
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>

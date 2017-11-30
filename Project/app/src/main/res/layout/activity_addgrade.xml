@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/paddingLeft"
     android:paddingRight="@dimen/paddingRight"
     android:paddingTop="@dimen/paddingTop"
-    tools:context="com.cs321.group7.worksmart.AddTaskActivity">
+    tools:context="com.cs321.group7.worksmart.AddGradeActivity">
 
     <TextView
         android:id="@+id/textView13"
@@ -17,56 +17,44 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="18dp"
-        android:text="Create Task"
+        android:text="Add Grade"
         android:textSize="30sp" />
 
     <EditText
-        android:id="@+id/label_editdate"
+        android:id="@+id/label_editweight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/label_edittime"
-        android:layout_alignStart="@+id/label_edittime"
-        android:layout_below="@+id/label_edittime"
+        android:layout_alignLeft="@+id/label_editvalue"
+        android:layout_alignStart="@+id/label_editvalue"
+        android:layout_below="@+id/label_editvalue"
         android:layout_marginTop="21dp"
         android:ems="10"
-        android:hint="Task Date"
-        android:inputType="text|date"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/label_editpriority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/label_editdate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:hint="Priority"
+        android:hint="Grade Weight"
         android:inputType="text|number"
         android:textAlignment="center" />
 
     <EditText
-        android:id="@+id/label_edittime"
+        android:id="@+id/label_editvalue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/label_editname"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:hint="Task Time"
-        android:inputType="text|time"
+        android:hint="Grade Value"
+        android:inputType="text|number"
         android:textAlignment="center" />
 
     <EditText
         android:id="@+id/label_editname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/label_edittime"
-        android:layout_alignStart="@+id/label_edittime"
+        android:layout_alignLeft="@+id/label_editvalue"
+        android:layout_alignStart="@+id/label_editvalue"
         android:layout_alignTop="@+id/textView13"
         android:layout_marginTop="78dp"
         android:ems="10"
-        android:hint="Task Name"
+        android:hint="Grade Name"
         android:inputType="textPersonName"
         android:textAlignment="center" />
 
@@ -74,22 +62,10 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/label_editweight"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="24dp"
         android:text="Submit"
         android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/label_editpriority"
-        android:layout_marginTop="21dp"
-        android:text="Set (1) for Important, (2) for Moderate, and (3) for Low "
-        android:textAlignment="center"
-        android:textSize="18sp" />
 
 </RelativeLayout>

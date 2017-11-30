@@ -132,6 +132,10 @@ public class BasicActivity extends AppCompatActivity
                 c = AddTaskActivity.class;
                 break;
 
+            case R.id.action_addgrade:
+                c = AddGradeActivity.class;
+                break;
+
             case R.id.action_about:
                 c = About.class;
                 break;

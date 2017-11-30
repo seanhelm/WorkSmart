@@ -1,5 +1,6 @@
 package com.cs321.group7.worksmart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +37,7 @@ public class ClassInfoActivity extends BasicActivity {
         }
 
         Long class_id = Long.parseLong(message);
-        Class current_class = util.getClassById(class_id);
+        final Class current_class = util.getClassById(class_id);
 
         TextView sem_name = (TextView) findViewById(R.id.classname);
         sem_name.setText(current_class.getName());
@@ -58,6 +59,31 @@ public class ClassInfoActivity extends BasicActivity {
             @Override
             public void onClick(View v) {
                 ClassInfoActivity.super.goToActivity(R.id.action_tasklist, message);
+            }
+        });
+
+        Button contactProf = (Button) findViewById(R.id.contactprofessor);
+        contactProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL , new String[]{current_class.getProfessor()});
+                startActivity(Intent.createChooser(i, "Send mail..."));
+            }
+        });
+
+        Button contactUTA = (Button) findViewById(R.id.contactuta);
+        contactUTA.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+                i.putExtra(Intent.EXTRA_EMAIL , new String[]{current_class.getUta()});
+                startActivity(Intent.createChooser(i, "Send mail..."));
             }
         });
     }

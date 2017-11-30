@@ -9,7 +9,9 @@
     <RelativeLayout
         android:layout_width="395dp"
         android:layout_height="643dp"
+
         android:theme="@style/hi"
+
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
