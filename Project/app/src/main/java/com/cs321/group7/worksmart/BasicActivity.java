@@ -107,10 +107,6 @@ public class BasicActivity extends AppCompatActivity
                 c = SettingsActivity.class;
                 break;
 
-            case R.id.action_exit:
-                Log.d("Heads up!", "You clicked exit!");
-                break;
-
             case R.id.action_classinfo:
                 c = ClassInfoActivity.class;
                 break;
@@ -127,12 +123,17 @@ public class BasicActivity extends AppCompatActivity
                 c = SemesterListActivity.class;
                 break;
 
+
             case R.id.action_tasklist:
                 c = TaskListActivity.class;
                 break;
 
             case R.id.action_addtask:
                 c = AddTaskActivity.class;
+                break;
+
+            case R.id.action_about:
+                c = About.class;
                 break;
 
             default:

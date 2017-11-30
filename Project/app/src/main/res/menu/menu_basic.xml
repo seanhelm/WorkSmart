@@ -5,12 +5,12 @@
             <item
                 android:id="@+id/action_main"
                 android:icon="@android:drawable/ic_menu_compass"
-                android:title="Main Activity" />
+                android:title="Home Page" />
 
             <item
                 android:id="@+id/action_semesterlist"
                 android:icon="@android:drawable/ic_menu_agenda"
-                android:title="Classes" />
+                android:title="View Semesters" />
         </menu>
     </item>
 
@@ -71,11 +71,10 @@
     <item
         android:id="@+id/action_settings"
         android:icon="@android:drawable/ic_menu_manage"
-        android:title="Settings Activity" />
-
+        android:title="Settings" />
     <item
-        android:id="@+id/action_exit"
-        android:icon="@android:drawable/ic_menu_revert"
-        android:title="Exit" />
+        android:id="@+id/action_about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="About" />
 
 </menu>

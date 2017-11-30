@@ -245,10 +245,28 @@ public class SystemUtilities
     /*
     Retrieves the email info for professor of a class
      */
-    public String getEmailInfo(Class className)
+    public String getProfessorEmail(Class className)
     {
         setCurrentClass(className);
         return appDB.classDao().get(currentClassId).getEmail();
+    }
+
+    /*
+    Retrieves the GTA email info of a class
+     */
+    public String getGTAEmail(Class className)
+    {
+        setCurrentClass(className);
+        return appDB.classDao().get(currentClassId).getGta();
+    }
+
+    /*
+    Retrieves the UTA email info of a class
+     */
+    public String getUTAEmail(Class className)
+    {
+        setCurrentClass(className);
+        return appDB.classDao().get(currentClassId).getUta();
     }
 
     /*
@@ -297,5 +315,15 @@ public class SystemUtilities
     */
     public void setCurrentClass(Class c) {
         this.currentClassId = c.getId();
+    }
+
+    public long getCurrentSemesterId()
+    {
+        return this.currentSemesterId;
+    }
+
+    public long getCurrentClassId()
+    {
+        return this.currentClassId;
     }
 }
