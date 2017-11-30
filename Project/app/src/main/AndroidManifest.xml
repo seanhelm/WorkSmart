@@ -55,6 +55,10 @@
             android:label="Add Task"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".AddGradeActivity"
+            android:label="Add Grade"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".TaskListActivity"
             android:label="Task List"
             android:theme="@style/AppTheme.NoActionBar" />

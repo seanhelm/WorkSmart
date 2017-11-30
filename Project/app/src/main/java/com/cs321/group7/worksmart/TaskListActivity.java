@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.cs321.group7.worksmart.Entities.Class;
+import com.cs321.group7.worksmart.Entities.Grade;
 import com.cs321.group7.worksmart.Entities.Task;
 
 import java.util.ArrayList;
@@ -20,10 +21,12 @@ import java.util.List;
 
 public class TaskListActivity extends BasicActivity {
     SystemUtilities util;
-    ListView listview;
+    ListView listview, listview2;
     ArrayList<String> listItems = new ArrayList<String>();
-    ArrayAdapter<String> adapter;
+    ArrayList<String> listItems2 = new ArrayList<String>();
+    ArrayAdapter<String> adapter, adapter2;
     List<Task> tasks;
+    List<Grade> grades;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,8 @@ public class TaskListActivity extends BasicActivity {
 
         util = new SystemUtilities(getApplicationContext());
 
-        FloatingActionButton addClassButton = (FloatingActionButton) findViewById(R.id.addTaskButton);
+        FloatingActionButton addTaskButton = (FloatingActionButton) findViewById(R.id.addTaskButton);
+        FloatingActionButton addGradeButton = (FloatingActionButton) findViewById(R.id.addGradeButton);
 
         final String message;
         if (savedInstanceState == null) {
@@ -54,22 +58,40 @@ public class TaskListActivity extends BasicActivity {
 
 
         listview = (ListView) findViewById(R.id.task_list);
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                listItems);
+        listview2 = (ListView) findViewById(R.id.list_2);
+
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
         listview.setAdapter(adapter);
 
+        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems2);
+        listview2.setAdapter(adapter2);
+
         tasks = util.getTasksForClass(current_class);
+        grades = util.getGradesForClass(current_class);
+
 
         for (int i = 0; i < tasks.size(); i++) {
             listItems.add(tasks.get(i).getName() + " due at " + tasks.get(i).getTime() + " on " + tasks.get(i).getDate());
         }
         adapter.notifyDataSetChanged();
 
-        addClassButton.setOnClickListener(new View.OnClickListener() {
+        for (int i = 0; i < grades.size(); i++) {
+            listItems2.add(grades.get(i).getName() + " valued "+grades.get(i).getValue()+" weighted "+grades.get(i).getWeight());
+        }
+        adapter2.notifyDataSetChanged();
+
+        addTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TaskListActivity.super.goToActivity(R.id.action_addtask, message);
+            }
+        });
+
+        addGradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TaskListActivity.super.goToActivity(R.id.action_addgrade, message);
             }
         });
 

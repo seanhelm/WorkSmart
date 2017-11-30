@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/paddingBottom"
+    android:paddingLeft="@dimen/paddingLeft"
+    android:paddingRight="@dimen/paddingRight"
+    android:paddingTop="@dimen/paddingTop"
+    tools:context="com.cs321.group7.worksmart.AddGradeActivity">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Add Graded Item"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/label_editweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/label_editvalue"
+        android:layout_alignStart="@+id/label_editvalue"
+        android:layout_below="@+id/label_editvalue"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Grade Weight"
+        android:inputType="text|number"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/label_editvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_editname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="Grade Value"
+        android:inputType="text|number"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/label_editname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/label_editvalue"
+        android:layout_alignStart="@+id/label_editvalue"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_marginTop="78dp"
+        android:ems="10"
+        android:hint="Grade Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="30sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

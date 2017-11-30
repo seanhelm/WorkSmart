@@ -52,6 +52,10 @@
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Add Task" />
             <item
+                android:id="@+id/action_addgrade"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Add Grade" />
+            <item
                 android:id="@+id/action_addsemester"
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Add Semester" />
