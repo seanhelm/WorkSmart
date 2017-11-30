@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.cs321.group7.worksmart.Entities.Class;
-import com.cs321.group7.worksmart.Entities.Semester;
+import com.cs321.group7.worksmart.Entities.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,21 +18,21 @@ import java.util.List;
  * Created by Chris on 11/26/2017.
  */
 
-public class ClassListActivity extends BasicActivity {
+public class TaskListActivity extends BasicActivity {
     SystemUtilities util;
     ListView listview;
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    List<Class> classes;
+    List<Task> tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classlist);
+        setContentView(R.layout.activity_tasklist);
 
         util = new SystemUtilities(getApplicationContext());
 
-        FloatingActionButton addClassButton = (FloatingActionButton) findViewById(R.id.addClassButton);
+        FloatingActionButton addClassButton = (FloatingActionButton) findViewById(R.id.addTaskButton);
 
         final String message;
         if (savedInstanceState == null) {
@@ -47,14 +46,12 @@ public class ClassListActivity extends BasicActivity {
             message = (String) savedInstanceState.getSerializable("MESSAGE");
         }
 
-        Long sem_id = Long.parseLong(message);
+        Long class_id = Long.parseLong(message);
+        Class current_class = util.getClassById(class_id);
 
-        Semester semester = util.getSemesterById(sem_id);
+        TextView label = (TextView) findViewById(R.id.classname);
+        label.setText(current_class.getName() + " Tasks:");
 
-        TextView sem_name = (TextView) findViewById(R.id.semester_name_tag);
-        sem_name.setText(semester.getName() + " Classes:");
-
-        classes = util.getClassesForSemester(semester);
 
         listview = (ListView) findViewById(R.id.task_list);
         adapter = new ArrayAdapter<String>(this,
@@ -62,33 +59,27 @@ public class ClassListActivity extends BasicActivity {
                 listItems);
         listview.setAdapter(adapter);
 
-        for (int i = 0; i < classes.size(); i++) {
-            listItems.add(classes.get(i).getName());
-            //util.removeSemester(sems.get(i));
+        tasks = util.getTasksForClass(current_class);
+
+        for (int i = 0; i < tasks.size(); i++) {
+            listItems.add(tasks.get(i).getName() + " due at " + tasks.get(i).getTime() + " on " + tasks.get(i).getDate());
         }
         adapter.notifyDataSetChanged();
-
 
         addClassButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ClassListActivity.super.goToActivity(R.id.action_addclass, message);
+                TaskListActivity.super.goToActivity(R.id.action_addtask, message);
             }
         });
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ClassListActivity.super.goToActivity(R.id.action_classinfo, "" + classes.get(position).getId());
-            }
-        });
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_classlist:
+            case R.id.action_tasklist:
                 return true;
         }
         return super.onOptionsItemSelected(item);
