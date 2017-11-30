@@ -12,7 +12,7 @@ import com.cs321.group7.worksmart.Entities.Semester;
  * Created by Chris on 11/26/2017.
  */
 
-public class AddClassActivity extends BasicActivity {
+public class AddTaskActivity extends BasicActivity {
 
     EditText name;
     Button addSemesterButton;
@@ -21,7 +21,7 @@ public class AddClassActivity extends BasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addclass);
+        setContentView(R.layout.activity_addtask);
 
         addSemesterButton = (Button) findViewById(R.id.submit);
         name = (EditText) findViewById(R.id.label_date);
@@ -50,7 +50,7 @@ public class AddClassActivity extends BasicActivity {
             public void onClick(View v) {
                 SystemUtilities util = new SystemUtilities(getApplicationContext());
                 util.addClass(semester, name.getText().toString(), "", "", "", "");
-                AddClassActivity.super.goToActivity(R.id.action_classlist, message);
+                AddTaskActivity.super.goToActivity(R.id.action_classlist, message);
             }
         });
     }
@@ -59,7 +59,7 @@ public class AddClassActivity extends BasicActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.action_addclass:
+            case R.id.action_addtask:
                 return true;
         }
         return super.onOptionsItemSelected(item);

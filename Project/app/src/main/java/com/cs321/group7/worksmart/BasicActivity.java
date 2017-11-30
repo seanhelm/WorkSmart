@@ -131,6 +131,10 @@ public class BasicActivity extends AppCompatActivity
                 c = TaskListActivity.class;
                 break;
 
+            case R.id.action_addtask:
+                c = AddTaskActivity.class;
+                break;
+
             default:
                 c = MainActivity.class;
                 Log.d("Heads up!", "Add this activity to the switch statement");

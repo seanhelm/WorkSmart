@@ -51,6 +51,10 @@
             android:label="Add Semester"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".AddTaskActivity"
+            android:label="Add Task"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".TaskListActivity"
             android:label="Task List"
             android:theme="@style/AppTheme.NoActionBar" />

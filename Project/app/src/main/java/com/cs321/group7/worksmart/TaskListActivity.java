@@ -34,7 +34,7 @@ public class TaskListActivity extends BasicActivity {
 
         util = new SystemUtilities(getApplicationContext());
 
-        FloatingActionButton addClassButton = (FloatingActionButton) findViewById(R.id.addClassButton);
+        FloatingActionButton addClassButton = (FloatingActionButton) findViewById(R.id.addTaskButton);
 
         final String message;
         if (savedInstanceState == null) {
@@ -68,7 +68,12 @@ public class TaskListActivity extends BasicActivity {
         }
         adapter.notifyDataSetChanged();
 
-
+        addClassButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TaskListActivity.super.goToActivity(R.id.action_addtask, message);
+            }
+        });
 
     }
 
