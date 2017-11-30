@@ -3,6 +3,8 @@ package com.cs321.group7.worksmart;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,8 +24,8 @@ import java.util.List;
 public class MainActivity extends BasicActivity {
 
     ArrayList<String> listItems = new ArrayList<String>();
+    ArrayList<Long> listItemsIDs = new ArrayList<Long>();
     ArrayAdapter<String> adapter;
-    int clickCounter = 0;
     SystemUtilities util;
     ListView listview;
 
@@ -85,22 +87,19 @@ public class MainActivity extends BasicActivity {
             for (int j = 0; j < classes.size(); j++) {
                 if (classes.get(j).getDay(day-2)) {
                     listItems.add(classes.get(j).getName() + " at " + classes.get(j).getClass_start_time());
+                    listItemsIDs.add(classes.get(j).getId());
                 }
             }
         }
 
         adapter.notifyDataSetChanged();
 
-
-//        Button butt = (Button) findViewById(R.id.button2);
-//
-//        butt.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                listItems.add("Clicked : " + clickCounter++);
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.super.goToActivity(R.id.action_classinfo, "" + listItemsIDs.get(position));
+            }
+        });
     }
 
     @Override
