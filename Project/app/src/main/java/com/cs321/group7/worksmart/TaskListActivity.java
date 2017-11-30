@@ -13,6 +13,7 @@ import com.cs321.group7.worksmart.Entities.Class;
 import com.cs321.group7.worksmart.Entities.Grade;
 import com.cs321.group7.worksmart.Entities.Task;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,7 @@ public class TaskListActivity extends BasicActivity {
         Class current_class = util.getClassById(class_id);
 
         TextView label = (TextView) findViewById(R.id.classname);
-        label.setText(current_class.getName() + " Tasks:");
+        label.setText(current_class.getName());
 
 
         listview = (ListView) findViewById(R.id.task_list);
@@ -79,7 +80,10 @@ public class TaskListActivity extends BasicActivity {
         adapter.notifyDataSetChanged();
 
         for (int i = 0; i < grades.size(); i++) {
-            listItems2.add(grades.get(i).getName() + " valued "+grades.get(i).getValue()+" weighted "+grades.get(i).getWeight());
+            double value = grades.get(i).getWeight();
+            value =Double.parseDouble(new DecimalFormat("#.##").format(value));
+
+            listItems2.add("Name: " + grades.get(i).getName() + "      Score:"+ grades.get(i).getValue() + "      Weight:" + value);
         }
         adapter2.notifyDataSetChanged();
 
