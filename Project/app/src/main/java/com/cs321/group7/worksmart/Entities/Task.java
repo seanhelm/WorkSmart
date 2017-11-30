@@ -4,6 +4,7 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
@@ -16,7 +17,8 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
         parentColumns = "id",
         childColumns = "class_id",
         onDelete = CASCADE))
-public class Task {
+public class Task implements Comparable
+{
     @PrimaryKey(autoGenerate = true)
     private long id;
 
@@ -97,5 +99,17 @@ public class Task {
     public void setClassId(long classId)
     {
         this.classId = classId;
+    }
+
+    public int compareTo(Task comparesTu)
+    {
+        int priorityLevel = comparesTu.getPriority();
+        return this.getPriority() - priorityLevel;
+    }
+
+    public int compareTo(Object o)
+    {
+        int priorityLevel = ((Task)o).getPriority();
+        return this.getPriority() - priorityLevel;
     }
 }
