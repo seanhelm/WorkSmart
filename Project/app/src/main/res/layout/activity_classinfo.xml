@@ -80,11 +80,11 @@
         android:id="@+id/insertgrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="88"
-        android:textSize="30sp"
         android:layout_alignBaseline="@+id/grade"
         android:layout_alignBottom="@+id/grade"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="100"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/label_editlocation"
@@ -123,12 +123,12 @@
         android:id="@+id/button_see_grades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasks / Grades"
-        android:layout_below="@+id/contactuta"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/contactuta"
-        android:layout_alignStart="@+id/contactuta" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/contactuta"
+        android:layout_below="@+id/contactuta"
+        android:text="Tasks and Grades" />
 
 
 </RelativeLayout>

@@ -10,65 +10,86 @@
     tools:context="com.cs321.group7.worksmart.AddTaskActivity">
 
     <TextView
+        android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add Task!"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Create Task"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/label_editdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text|date"
-        android:hint="Task Date"
+        android:layout_alignLeft="@+id/label_edittime"
+        android:layout_alignStart="@+id/label_edittime"
         android:layout_below="@+id/label_edittime"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Task Date"
+        android:inputType="text|date"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/label_editpriority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text|number"
-        android:hint="Priority"
         android:layout_below="@+id/label_editdate"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="Priority"
+        android:inputType="text|number"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/label_edittime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/label_editname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="Task Time"
         android:inputType="text|time"
-        android:layout_below="@+id/label_editname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/label_editname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_alignLeft="@+id/label_edittime"
+        android:layout_alignStart="@+id/label_edittime"
+        android:layout_alignTop="@+id/textView13"
+        android:layout_marginTop="78dp"
         android:ems="10"
         android:hint="Task Name"
         android:inputType="textPersonName"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView12"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
         android:text="Submit"
-        android:layout_below="@+id/label_editpriority"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/label_editpriority"
+        android:layout_marginTop="21dp"
+        android:text="Set (1) for Important, (2) for Moderate, and (3) for Low "
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
 </RelativeLayout>

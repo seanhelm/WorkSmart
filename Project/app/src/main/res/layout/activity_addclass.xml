@@ -12,30 +12,31 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add Class!" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Create Class"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/label_editdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Class Name"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:ems="10"
+        android:hint="Class Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/label_editdate"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_toEndOf="@+id/label_editdate"
-        android:layout_toRightOf="@+id/label_editdate"
-        android:text="Submit" />
+        android:layout_below="@+id/label_editdate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Submit"
+        android:textSize="24sp" />
 </RelativeLayout>
