@@ -18,13 +18,24 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/label_date"
+        android:id="@+id/label_editdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text|date"
         android:hint="Task Date"
         android:layout_below="@+id/label_edittime"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/label_editpriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text|number"
+        android:hint="Priority"
+        android:layout_below="@+id/label_editdate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -56,9 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:layout_below="@+id/label_date"
+        android:layout_below="@+id/label_editpriority"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

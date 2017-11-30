@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.cs321.group7.worksmart.Entities.Semester;
+import com.cs321.group7.worksmart.Entities.Class;
 
 /**
  * Created by Chris on 11/26/2017.
@@ -15,16 +15,26 @@ import com.cs321.group7.worksmart.Entities.Semester;
 public class AddTaskActivity extends BasicActivity {
 
     EditText name;
-    Button addSemesterButton;
+    Button button_submit;
     SystemUtilities util;
+
+    public void setTextOfBox(int textbox_id, String text) {
+        final EditText textbox = (EditText) findViewById(textbox_id);
+        textbox.setText(text);
+    }
+
+    public String getTextOfBox(int textbox_id) {
+        final EditText textbox = (EditText) findViewById(textbox_id);
+        return textbox.getText().toString();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addtask);
 
-        addSemesterButton = (Button) findViewById(R.id.submit);
-        name = (EditText) findViewById(R.id.label_date);
+        button_submit = (Button) findViewById(R.id.submit);
+        name = (EditText) findViewById(R.id.label_editdate);
 
         util = new SystemUtilities(getApplicationContext());
 
@@ -40,17 +50,16 @@ public class AddTaskActivity extends BasicActivity {
             message = (String) savedInstanceState.getSerializable("MESSAGE");
         }
 
-        Long sem_id = Long.parseLong((message));
+        Long class_id = Long.parseLong(message);
+        final Class current_class = util.getClassById(class_id);
 
-        final Semester semester = util.getSemesterById(sem_id);
-
-
-        addSemesterButton.setOnClickListener(new View.OnClickListener() {
+        button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SystemUtilities util = new SystemUtilities(getApplicationContext());
-                util.addClass(semester, name.getText().toString(), "", "", "", "");
-                AddTaskActivity.super.goToActivity(R.id.action_classlist, message);
+                util.addTask(current_class, getTextOfBox(R.id.label_editname), getTextOfBox(R.id.label_editdate), getTextOfBox(R.id.label_edittime), Integer.parseInt(getTextOfBox(R.id.label_editpriority)));
+                util.updateClass(current_class);
+                AddTaskActivity.super.goToActivity(R.id.action_tasklist, message);
             }
         });
     }

@@ -15,7 +15,7 @@
         android:text="Add Class!" />
 
     <EditText
-        android:id="@+id/label_date"
+        android:id="@+id/label_editdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -32,10 +32,10 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/label_date"
+        android:layout_alignTop="@+id/label_editdate"
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
-        android:layout_toEndOf="@+id/label_date"
-        android:layout_toRightOf="@+id/label_date"
+        android:layout_toEndOf="@+id/label_editdate"
+        android:layout_toRightOf="@+id/label_editdate"
         android:text="Submit" />
 </RelativeLayout>

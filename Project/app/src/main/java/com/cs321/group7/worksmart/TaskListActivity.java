@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.cs321.group7.worksmart.Entities.Class;
-import com.cs321.group7.worksmart.Entities.Grade;
-import com.cs321.group7.worksmart.Entities.Semester;
+import com.cs321.group7.worksmart.Entities.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class TaskListActivity extends BasicActivity {
     ListView listview;
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
-    List<Grade> grades;
+    List<Task> tasks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +59,10 @@ public class TaskListActivity extends BasicActivity {
                 listItems);
         listview.setAdapter(adapter);
 
-        grades = util.getGradesForClass(current_class);
+        tasks = util.getTasksForClass(current_class);
 
-        for (int i = 0; i < grades.size(); i++) {
-            listItems.add(grades.get(i).toString());
+        for (int i = 0; i < tasks.size(); i++) {
+            listItems.add(tasks.get(i).getName() + " due at " + tasks.get(i).getTime() + " on " + tasks.get(i).getDate());
         }
         adapter.notifyDataSetChanged();
 

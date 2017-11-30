@@ -24,7 +24,7 @@ public class AddClassActivity extends BasicActivity {
         setContentView(R.layout.activity_addclass);
 
         addSemesterButton = (Button) findViewById(R.id.submit);
-        name = (EditText) findViewById(R.id.label_date);
+        name = (EditText) findViewById(R.id.label_editdate);
 
         util = new SystemUtilities(getApplicationContext());
 

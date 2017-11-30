@@ -61,12 +61,12 @@
     <ListView
         android:id="@+id/task_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400px"
+        android:layout_marginTop="11dp"
         android:scrollbars="horizontal|vertical"
-        android:layout_below="@+id/grade"
+        android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/gradecalc" />
+        android:layout_alignParentStart="true" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addTaskButton"
@@ -78,5 +78,34 @@
         android:clickable="true"
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grades?"
+        android:layout_below="@+id/task_list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Tasks"
+        android:layout_below="@+id/grade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/list_2"
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="14dp" />
 
 </RelativeLayout>
